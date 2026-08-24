@@ -1,4 +1,4 @@
-# Day 2 – Timing Libraries, Synthesis Methods & Flip-Flop RTL Design
+# Module  2 – Timing Libraries, Synthesis Methods & Flip-Flop RTL Design
 
 
 The Module 2 focuses on important concepts that connect **RTL coding with synthesis and technology libraries**. In this session, we explore the SKY130 timing library, examine different synthesis strategies, and implement various D flip-flop configurations using Verilog.
