@@ -1,4 +1,4 @@
-## Module 1 – Verilog RTL Design, Simulation and Synthesis
+# Module 1 – Verilog RTL Design, Simulation and Synthesis
 
 The aim of this experiment was to develop a basic understanding of Register Transfer Level (RTL) design using Verilog HDL. It also covered the compilation and simulation of Verilog programs with Icarus Verilog (iverilog), followed by waveform verification using GTKWave. To gain practical experience, a 2-to-1 Multiplexer was designed and simulated as part of the RTL simulation workflow.
 
