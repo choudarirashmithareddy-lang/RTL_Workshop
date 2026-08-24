@@ -27,7 +27,7 @@ The practical exercises include the implementation of **MUX, DEMUX, and Ripple C
 
 ---
 
-# RTL Coding Styles
+## RTL Coding Styles
 
 RTL, or **Register Transfer Level**, describes the behavior and structure of digital hardware before synthesis converts the description into a gate-level implementation.
 
@@ -105,7 +105,7 @@ Unlike an ordered `if-else` chain, `case` provides a convenient way to describe 
 
 ---
 
-# Latch Inference
+## Latch Inference
 
 A **latch** is a level-sensitive storage element that maintains its previous output when a new value is not supplied.
 
@@ -265,7 +265,7 @@ Adding an `else if` does not automatically make combinational logic complete. Ev
 
 ---
 
-# Labs 3–5: CASE Statements
+## Labs 3–5: CASE Statements
 
 ## Lab 3 – Incomplete CASE Statement
 
@@ -397,7 +397,7 @@ Each output driven by combinational logic must be assigned appropriately along e
 
 ---
 
-# Lab 6: Overlapping CASEZ
+## Lab 6: Overlapping CASEZ
 
 **File:** `bad_case.v`
 
@@ -450,7 +450,7 @@ Overlapping wildcard patterns can result in more than one matching condition. Ca
 
 ---
 
-# Synthesis Optimization
+## Synthesis Optimization
 
 Synthesis tools perform several optimization steps before producing the final technology-mapped netlist.
 
@@ -499,7 +499,7 @@ Because of these optimizations, the structure of the synthesized circuit may loo
 
 ---
 
-# Looping Constructs
+## Looping Constructs
 
 Loops allow repetitive hardware behavior to be described without manually duplicating similar RTL statements.
 
@@ -578,7 +578,7 @@ Generate loops are particularly useful when multiple instances of a hardware mod
 
 ---
 
-# Labs 7–10: MUX, DEMUX & RCA
+## Labs 7–10: MUX, DEMUX & RCA
 
 ## Lab 7 – MUX Using Procedural FOR Loop
 
@@ -771,7 +771,7 @@ The RCA experiment demonstrates how generate loops can be used to construct repe
 
 ---
 
-# Overall Summary
+## Overall Summary
 
 The Module 5 experiments demonstrate how different Verilog coding constructs influence the interpretation and synthesis of digital hardware.
 
@@ -792,7 +792,7 @@ The Module 5 experiments demonstrate how different Verilog coding constructs inf
 
 ---
 
-# Conclusion
+## Conclusion
 
 Module 5 extends RTL design concepts by introducing conditional statements and looping mechanisms used to describe digital hardware.
 
