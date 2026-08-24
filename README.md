@@ -10,9 +10,6 @@ This repository contains my work and learning activities from the RTL Design Wor
 | Module 5 | Optimization in synthesis    |  Completed |
 ---
 ## Repository Structure
-## Repository Structure
-
-## Repository Structure
 
 ```text
 RTL_Workshop/
@@ -170,26 +167,11 @@ The practical work included incomplete and complete "if-else" and "case" impleme
 - Ripple Carry Adder
 - Structural hardware generation
 
-Hardware Design Flow
-
-RTL Coding
-     ↓
-Functional Simulation
-     ↓
-Logic Analysis
-     ↓
-Synthesis
-     ↓
-Hardware Inference
-     ↓
-Netlist Generation
-     ↓
-Waveform & Hardware Analysis
-
 ---
 ## Module 5 Documentation
 
-"Module 5 – RTL Coding Styles & Looping Constructs" [Module 5](./Module5/README.md)
+"Module 5 – RTL Coding Styles & Looping Constructs "[Module 5](./Module5/README.md)
+
 ---
 ##  Tools Used
 
@@ -202,25 +184,25 @@ Waveform & Hardware Analysis
 - Git & GitHub
 ---
 
-Overall Learning Outcomes
+### Overall Learning Outcomes
 
 After completing the five-Modules workshop, I gained practical exposure to the following areas:
 
-RTL Design
+#### RTL Design
 
 - Writing Verilog RTL descriptions
 - Creating testbenches
 - Designing combinational and sequential circuits
 - Understanding different RTL coding styles
 
-Simulation
+#### Simulation
 
 - Compiling Verilog designs with Icarus Verilog
 - Running RTL simulations
 - Generating simulation waveforms
 - Inspecting signal behavior using GTKWave
 
-Synthesis
+#### Synthesis
 
 - Working with Yosys
 - Understanding the RTL synthesis process
@@ -228,7 +210,7 @@ Synthesis
 - Generating gate-level netlists
 - Performing technology mapping
 
-Timing & Libraries
+#### Timing & Libraries
 
 - Understanding ".lib" files
 - Exploring timing information
@@ -236,7 +218,7 @@ Timing & Libraries
 - Working with SKY130 standard cells
 - Comparing different cell implementations
 
-Optimization
+#### Optimization
 
 - RTL optimization
 - Logic optimization
@@ -245,14 +227,14 @@ Optimization
 - D flip-flop optimization
 - Counter optimization
 
-Gate-Level Verification
+#### Gate-Level Verification
 
 - Understanding the RTL-to-gate-level flow
 - Performing Gate-Level Simulation
 - Comparing RTL and synthesized behavior
 - Analysing synthesized netlists
 
-RTL Coding Practices
+#### RTL Coding Practices
 
 - Using "if-else" correctly
 - Writing complete "case" statements
@@ -263,7 +245,7 @@ RTL Coding Practices
 - Using "always @(*)" for combinational logic
 - Identifying potential simulation–synthesis mismatches
 
-Hardware Structures
+#### Hardware Structures
 
 - Multiplexer design
 - Demultiplexer design
@@ -274,7 +256,7 @@ Hardware Structures
 - Repeated structural hardware
 
 ---
-Workshop Documentation
+### Workshop Documentation
 
 |Day| Documentation|
 |-----|-------------|
@@ -285,7 +267,7 @@ Workshop Documentation
 |Day 5| "RTL Coding Styles & Looping Constructs" [Module 5](./Module5/README.md)|
 ---
 
- Final Takeaway
+###  Final Takeaway
 
 The five-day workshop provided a practical understanding of the journey from RTL code to synthesized digital hardware.
 
