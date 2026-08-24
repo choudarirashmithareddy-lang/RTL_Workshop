@@ -18,7 +18,14 @@ Module 1 concentrated on learning the fundamentals of the RTL design flow, begin
 - what is Simulator,Design,TestBench ?
 - How simulator works?
 - iverilog based Simulation Flow
-- 
+- 2:1 Multiplexer implementation
+- GTKWave waveform analysis
+- RTL Design and Synthesis
+- Introduction to Yosys 
+- Understanding `.lib` files
+- Faster and slower cell flavors
+- Cell selection based on design requirements
+- Synthesis lab with yosys
 ---
 
 ## Module 1 Documentation
@@ -39,23 +46,17 @@ The complete Module 1 experiment, including commands, explanations, screenshots,
 
 Module 2 concentrated on exploring technology libraries, timing characteristics, hierarchical and flattened synthesis approaches, and various flip-flop RTL coding techniques.
 ### Topics Covered
-
-- SKY130 technology library
-- Understanding `.lib` timing libraries
-- Process, voltage and temperature conditions
-- Hierarchical synthesis
-- Flattened synthesis
-- Comparison of hierarchical and flattened synthesis
-- Asynchronous reset D flip-flop
-- Asynchronous set D flip-flop
-- Synchronous reset D flip-flop
-- Icarus Verilog simulation
-- GTKWave waveform analysis
-- Yosys synthesis
-- `dfflibmap` for flip-flop mapping
-- Technology mapping using `abc`
-- Gate-level representation
-
+- Timing Libraries
+- SKY130 PDK Overview
+- Decoding tt_025C_1v80 in the SKY130 PDK
+- Opening and Exploring the .lib File
+- Hierarchical vs. Flattened Synthesis
+- Flip-Flop Coding Styles
+- Asynchronous Reset D Flip-Flop
+- Asynchronous Set D Flip-Flop
+- Synchronous Reset D Flip-Flop
+- Icarus Verilog Simulation
+- Synthesis with Yosys
 ---
 
 ## Module 2 Documentation
