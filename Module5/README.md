@@ -6,7 +6,7 @@ The practical exercises include the implementation of **MUX, DEMUX, and Ripple C
 
 ---
 
-## 📚 Table of Contents
+##  Table of Contents
 
 * [RTL Coding Styles](#rtl-coding-styles)
 * [IF-ELSE Statements](#if-else-statements)
