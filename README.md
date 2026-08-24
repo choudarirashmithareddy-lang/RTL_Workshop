@@ -8,7 +8,28 @@ This repository contains my work and learning activities from the RTL Design Wor
 | Module 3 | Combinational and sequential optmizations    |  Completed |
 | Module 4 | GLS, blocking vs non-blocking and Synthesis-Simulation mismatch |  Completed |
 | Module 5 | Optimization in synthesis    |  Completed |
+---
+## Repository Structure
+## Repository Structure
 
+## Repository Structure
+
+```text
+RTL_Workshop/
+├── README.md
+├── Module1/
+│   └── README.md
+├── Module2/
+│   └── README.md
+├── Module3/
+│   └── README.md
+├── Module4/
+│   └── README.md
+└── Module5/
+    └── README.md
+```
+
+---
 
 # Module 1 – RTL Design, Simulation & Synthesis
 
@@ -31,7 +52,7 @@ Module 1 concentrated on learning the fundamentals of the RTL design flow, begin
 ## Module 1 Documentation
 
 The complete Module 1 experiment, including commands, explanations, screenshots, synthesis results, and observations:
- [Module1 – RTL Design, Simulation & Synthesis](./Module1/README.md)
+ [Module 1](./Module1/README.md)
  
 ---
 # Module 2 – Timing Libraries, Synthesis & Flip-Flop RTL
@@ -55,7 +76,7 @@ Module 2 concentrated on exploring technology libraries, timing characteristics,
 
 The complete Module 2 experiment, including commands, explanations, screenshots, simulation results, synthesis results, and observations:
 
- [Module 2 – Timing Libraries, Synthesis & Flip-Flop RTL](./Module2/README.md)
+[Module 2](./Module2/README.md)
  
 ---
 # Module 3 – RTL & Logic Optimization
@@ -80,24 +101,10 @@ The experiments explored constant propagation, redundant logic removal, D flip-f
 - Comparison of optimized and unoptimized implementations
 - Optimization observations
 
-Optimization Flow
-      
-RTL Description
-      ↓
-Logic Analysis
-      ↓
-Constant Propagation
-      ↓
-Redundant Logic Removal
-      ↓
-Logic Optimization
-      ↓
-Optimized Hardware
-
 ---
 ## Module 3 Documentation
 
-"Module 3 – RTL & Logic Optimization"
+"Module 3 – RTL & Logic Optimization"[Module 3](./Module3/README.md)
 
 ---
 
@@ -126,27 +133,11 @@ The experiments also demonstrated how Verilog coding practices can affect simula
 - Simulation–synthesis mismatch
 - RTL versus gate-level waveform comparison
 
-Simulation & Verification Flow
-
-RTL Design
-    ↓
-RTL Simulation
-    ↓
-Synthesis
-    ↓
-Technology Mapping
-    ↓
-Gate-Level Netlist
-    ↓
-Gate-Level Simulation
-    ↓
-Waveform Comparison
-
 ---
 
 ## Module 4 Documentation
 
-"Module 4 – RTL to Gate-Level Simulation" (./Module4/README.md)
+"Module 4 – RTL to Gate-Level Simulation" [Module 4](./Module4/README.md)
 
 ---
 
@@ -198,8 +189,7 @@ Waveform & Hardware Analysis
 ---
 ## Module 5 Documentation
 
-"Module 5 – RTL Coding Styles & Looping Constructs" (./Module5/README.md)
-
+"Module 5 – RTL Coding Styles & Looping Constructs" [Module 5](./Module5/README.md)
 ---
 ##  Tools Used
 
@@ -286,13 +276,13 @@ Hardware Structures
 ---
 Workshop Documentation
 
-Day| Documentation
-Day 1| "RTL Design, Simulation & Synthesis" (Module1/README.md)
-Day 2| "Timing Libraries, Synthesis & Flip-Flop RTL" (Module2/README.md)
-Day 3| "RTL & Logic Optimization" (Module3/README.md)
-Day 4| "RTL to Gate-Level Simulation" (Module4/README.md)
-Day 5| "RTL Coding Styles & Looping Constructs" (Module5/README.md)
-
+|Day| Documentation|
+|-----|-------------|
+|Day 1| "RTL Design, Simulation & Synthesis"[Module 1](./Module1/README.md)|
+|Day 2| "Timing Libraries, Synthesis & Flip-Flop RTL"[Module 2](./Module2/README.md)|
+|Day 3| "RTL & Logic Optimization" [Module 3](./Module3/README.md)|
+|Day 4| "RTL to Gate-Level Simulation"[Module 4](./Module4/README.md)|
+|Day 5| "RTL Coding Styles & Looping Constructs" [Module 5](./Module5/README.md)|
 ---
 
  Final Takeaway
