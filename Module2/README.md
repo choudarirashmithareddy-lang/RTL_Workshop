@@ -111,6 +111,7 @@ gedit sky130_fd_sc_hd__tt_025C_1v80.lib
 
 The file can then be searched to locate individual cells and examine their timing and electrical parameters.
 
+<img width="1080" height="537" alt="sky" src="https://github.com/user-attachments/assets/dc2dd0d3-ae67-41db-87c6-e86b3b713084" />
 
 
 ---
