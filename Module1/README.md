@@ -333,7 +333,7 @@ A graphical representation of the synthesized circuit will be displayed.
 
 ---
 
-## 7. Day 1 Learning Outcomes
+## 7. Learning Outcomes
 
 After completing this session, you should be able to:
 
@@ -351,9 +351,9 @@ After completing this session, you should be able to:
 
 ---
 
-## 📝 Final Takeaway
+##  Final Takeaway
 
-Day 1 introduced the fundamental **RTL-to-simulation-to-synthesis flow**.
+Module1 introduced the fundamental **RTL-to-simulation-to-synthesis flow**.
 
 The practical MUX experiment demonstrated how Verilog RTL can be compiled with **Icarus Verilog**, verified through **GTKWave**, and then processed using **Yosys** to obtain a synthesized gate-level representation.
 
