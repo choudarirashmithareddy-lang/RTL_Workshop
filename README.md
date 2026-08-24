@@ -1,15 +1,15 @@
 # RTL_Workshop
 This repository contains my work and learning activities from the RTL Design Workshop. It covers RTL coding using Verilog, digital-circuit simulation, waveform verification, synthesis, timing libraries, and sequential-circuit design. The repository includes practical work, commands, simulation outputs, synthesis results, screenshots, and observations.
 # Workshop Progress
-| Day   |  Topics                                                         | Status      |
+|Modules  |  Topics                                                         | Status      |
 | ----- | --------------------------------------------------------------- | ----------- |
-| Day 1 | Verilog RTL, Icarus Verilog, GTKWave and Yosys synthesis        |  Completed |
-| Day 2 | Timing libraries, synthesis techniques and flip-flop RTL design |  Completed |
+| Module 1 | Verilog RTL, Icarus Verilog, GTKWave and Yosys synthesis        |  Completed |
+| Module 2 | Timing libraries, synthesis techniques and flip-flop RTL design |  Completed |
+| Module 3 |
 
+# Module 1 – RTL Design, Simulation & Synthesis
 
-# Day 1 – RTL Design, Simulation & Synthesis
-
-Day 1 concentrated on learning the fundamentals of the RTL design flow, beginning with Verilog simulation and then moving towards the synthesis process using Yosys
+Module 1 concentrated on learning the fundamentals of the RTL design flow, beginning with Verilog simulation and then moving towards the synthesis process using Yosys
 ### Topics Covered
 
 - Simulator, Design and Testbench
@@ -28,12 +28,12 @@ Day 1 concentrated on learning the fundamentals of the RTL design flow, beginnin
 
 ---
 
-## Day 1 Documentation
+## Module 1 Documentation
 
-The complete Day 1 experiment, including commands, explanations, screenshots, synthesis results, and observations:
- [Day 1 – RTL Design, Simulation & Synthesis](./Day_1/README.md)
+The complete Module 1 experiment, including commands, explanations, screenshots, synthesis results, and observations:
+ [Module1 – RTL Design, Simulation & Synthesis](./Module1/README.md)
+ 
 ## Tools Used
-
 - Verilog
 - Icarus Verilog (iverilog)
 - GTKWave
@@ -42,10 +42,9 @@ The complete Day 1 experiment, including commands, explanations, screenshots, sy
 - Git & GitHub
 
 ---
-# Day 2 – Timing Libraries, Synthesis & Flip-Flop RTL
+# Module 2 – Timing Libraries, Synthesis & Flip-Flop RTL
 
-Day 2 focused on understanding **technology libraries, timing information, hierarchical and flattened synthesis, and flip-flop RTL coding styles**.
-
+Module 2 concentrated on exploring technology libraries, timing characteristics, hierarchical and flattened synthesis approaches, and various flip-flop RTL coding techniques.
 ### Topics Covered
 
 - SKY130 technology library
@@ -66,11 +65,11 @@ Day 2 focused on understanding **technology libraries, timing information, hiera
 
 ---
 
-## Day 2 Documentation
+## Module 2 Documentation
 
-The complete Day 2 experiment, including commands, explanations, screenshots, simulation results, synthesis results, and observations:
+The complete Module 2 experiment, including commands, explanations, screenshots, simulation results, synthesis results, and observations:
 
- [Day 2 – Timing Libraries, Synthesis & Flip-Flop RTL](./Day_2/README.md)
+ [Module 2 – Timing Libraries, Synthesis & Flip-Flop RTL](./Module2/README.md)
 
 ---
 ##  Tools Used
@@ -85,5 +84,5 @@ The complete Day 2 experiment, including commands, explanations, screenshots, si
 ---
 ## Author
 
-choudari rashmitha 
+* choudari rashmitha
 
