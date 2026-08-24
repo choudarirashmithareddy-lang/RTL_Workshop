@@ -150,8 +150,8 @@ The output behavior is:
 * With `sel` HIGH, `y` follows `i1`.
 
 ### RTL Waveform
+<img width="1080" height="561" alt="ternaryop" src="https://github.com/user-attachments/assets/aa176390-f6e8-4ab1-bb4e-65e63a2564f4" />
 
-![Ternary MUX RTL Waveform](images/ternary_mux_rtl.png)
 
 The waveform verifies the expected functional behavior of the MUX at the RTL level.
 
@@ -171,7 +171,8 @@ sky130_fd_sc_hd__mux2_1
 
 ### Synthesized Netlist
 
-![Ternary MUX Synthesized Netlist](images/ternary_mux_netlist.png)
+<img width="1080" height="571" alt="ternay" src="https://github.com/user-attachments/assets/770ac0ae-eea5-4b04-a8df-58bda9c93c8d" />
+
 
 The netlist illustrates how the simple RTL statement:
 
@@ -191,7 +192,8 @@ The testbench applies the required input combinations, and the resulting behavio
 
 ### Gate-Level Waveform
 
-![Ternary MUX Gate-Level Waveform](images/ternary_mux_gls.png)
+<img width="990" height="516" alt="2 1" src="https://github.com/user-attachments/assets/b6823164-8911-40e8-90fa-e5a752ff9a27" />
+
 
 The RTL and gate-level waveforms can be compared to confirm that synthesis has preserved the intended MUX functionality.
 
@@ -253,7 +255,8 @@ The incorrectly coded MUX was simulated to demonstrate the effect of the incompl
 
 ### RTL Waveform
 
-![Bad MUX RTL Waveform](images/bad_mux_rtl.png)
+<img width="1001" height="534" alt="2 2" src="https://github.com/user-attachments/assets/cd4ea022-122d-4417-b0b9-7a6a67400223" />
+
 
 The waveform shows that changes in the data inputs may not immediately appear at the output if the select signal remains unchanged.
 
@@ -271,7 +274,8 @@ Consequently, an incomplete sensitivity list can create a situation where the RT
 
 ### Gate-Level Waveform
 
-![Bad MUX Gate-Level Waveform](images/bad_mux_gls.png)
+<img width="990" height="532" alt="3 3" src="https://github.com/user-attachments/assets/89358b35-d4e5-47d2-b748-99bf77e97fa6" />
+
 
 Comparing the RTL waveform with the gate-level waveform demonstrates the difference between simulation behavior caused by the incomplete sensitivity list and the synthesized hardware behavior.
 
@@ -356,7 +360,10 @@ c ------------------/
 
 ### RTL Waveform
 
-![Blocking Assignment RTL Waveform](images/blocking_caveat_rtl.png)
+<img width="976" height="531" alt="4 2" src="https://github.com/user-attachments/assets/191bd04b-5e20-4251-9963-244167da226c" />
+
+
+
 
 The waveform illustrates how the intermediate signal and final output change during RTL simulation.
 
@@ -376,7 +383,8 @@ sky130_fd_sc_hd__o21a_1
 
 ### Synthesized Netlist
 
-![Blocking Assignment Synthesized Netlist](images/blocking_caveat_netlist.png)
+<img width="976" height="479" alt="4 3" src="https://github.com/user-attachments/assets/d18031f6-2852-47bf-863e-04b0f86af023" />
+
 
 The synthesized netlist represents the combinational hardware derived from the RTL description.
 
@@ -390,7 +398,8 @@ The synthesized netlist was then subjected to Gate-Level Simulation.
 
 ### Gate-Level Waveform
 
-![Blocking Assignment Gate-Level Waveform](images/blocking_caveat_gls.png)
+<img width="993" height="530" alt="4 4" src="https://github.com/user-attachments/assets/11f82110-fee7-4a76-84ca-c8d1a0db1c71" />
+
 
 The GLS waveform represents the behavior of the synthesized circuit.
 
@@ -689,7 +698,7 @@ The experiments also helped connect the theoretical concepts of RTL design with 
 
 # 12. Conclusion
 
-Day 4 provided practical experience with the progression from **RTL design to synthesized hardware and Gate-Level Simulation**.
+Module  4 provided practical experience with the progression from **RTL design to synthesized hardware and Gate-Level Simulation**.
 
 The ternary MUX experiment demonstrated how a compact Verilog description can be synthesized into a technology-specific standard-cell implementation. The Bad MUX experiment highlighted the problems that can arise from an incomplete sensitivity list and showed how RTL simulation may differ from synthesized hardware behavior.
 
