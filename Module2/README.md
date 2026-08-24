@@ -1,8 +1,7 @@
 # Day 2 – Timing Libraries, Synthesis Methods & Flip-Flop RTL Design
 
-Welcome to **Day 2** of the RTL Design Workshop!
 
-The second day focuses on important concepts that connect **RTL coding with synthesis and technology libraries**. In this session, we explore the SKY130 timing library, examine different synthesis strategies, and implement various D flip-flop configurations using Verilog.
+The Module 2 focuses on important concepts that connect **RTL coding with synthesis and technology libraries**. In this session, we explore the SKY130 timing library, examine different synthesis strategies, and implement various D flip-flop configurations using Verilog.
 
 The practical work also demonstrates how **Icarus Verilog**, **GTKWave**, and **Yosys** can be combined to simulate, analyze, synthesize, and map RTL designs.
 
@@ -497,7 +496,7 @@ The session also demonstrates that RTL coding style directly influences how synt
 
 ## Final Takeaway
 
-The main workflow covered in Day 2 is:
+The main workflow covered in Module 2 is:
 
 **Study the Technology → Understand the Library → Write RTL → Simulate → Synthesize → Map to Standard Cells**
 
