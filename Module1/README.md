@@ -1,4 +1,4 @@
-# Day 1 – Exploring Verilog RTL Design Through Simulation
+# Module 1 – Exploring Verilog RTL Design Through Simulation
 
 ## Experiment Objective
 
