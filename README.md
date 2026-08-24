@@ -3,29 +3,22 @@ This repository contains my work and learning activities from the RTL Design Wor
 # Workshop Progress
 |Modules  |  Topics                                                         | Status      |
 | ----- | --------------------------------------------------------------- | ----------- |
-| Module 1 | Verilog RTL, Icarus Verilog, GTKWave and Yosys synthesis        |  Completed |
-| Module 2 | Timing libraries, synthesis techniques and flip-flop RTL design |  Completed |
-| Module 3 |
+| Module 1 | Introduction to Verilog RTL design and Synthesis      |  Completed |
+| Module 2 | Timing libs, hierarchical vs flat synthesis and efficient flop coding styles |  Completed |
+| Module 3 | Combinational and sequential optmizations    |  Completed |
+| Module 4 | GLS, blocking vs non-blocking and Synthesis-Simulation mismatch |  Completed |
+| Module 5 | Optimization in synthesis    |  Completed |
+
 
 # Module 1 – RTL Design, Simulation & Synthesis
 
 Module 1 concentrated on learning the fundamentals of the RTL design flow, beginning with Verilog simulation and then moving towards the synthesis process using Yosys
+
 ### Topics Covered
-
-- Simulator, Design and Testbench
-- Icarus Verilog simulation
-- 2:1 Multiplexer implementation
-- GTKWave waveform analysis
-- RTL Design and Synthesis
-- Introduction to Yosys
-- Understanding `.lib` files
-- Faster and slower cell flavors
-- Cell selection based on design requirements
-- Yosys synthesis flow
-- Synthesis statistics
-- Gate-level representation
-- Generated gate-level netlist
-
+- what is Simulator,Design,TestBench ?
+- How simulator works?
+- iverilog based Simulation Flow
+- 
 ---
 
 ## Module 1 Documentation
