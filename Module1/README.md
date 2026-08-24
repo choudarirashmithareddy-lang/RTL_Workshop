@@ -1,8 +1,8 @@
-# Module 1 – Exploring Verilog RTL Design Through Simulation
+# Module 1 – Introduction Verilog RTL Design Through Simulation
 
 ## Experiment Objective
 
-The main objective of this experiment was to learn the basic concepts of Register Transfer Level (RTL) design using Verilog HDL. The experiment also involved understanding the process of compiling and simulating Verilog programs using Icarus Verilog (iverilog) and observing the simulation waveforms with GTKWave. As a practical exercise, a 2-to-1 Multiplexer was designed and simulated to understand the complete RTL simulation workflow.
+The primary objective of this experiment was to gain an understanding of Register Transfer Level (RTL) design using Verilog HDL. It also focused on learning how to compile and simulate Verilog designs using Icarus Verilog (iverilog) and analyze the resulting waveforms in GTKWave. As a hands-on exercise, a 2-to-1 Multiplexer was implemented and simulated to gain practical experience with the complete RTL design and simulation process.
 
 ---
 
