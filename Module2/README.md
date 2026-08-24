@@ -1,4 +1,4 @@
-# Day 2 – Exploring Timing Libraries, Synthesis & Flip-Flop RTL
+# Module 2 – Exploring Timing Libraries, Synthesis & Flip-Flop RTL
 
 ## 🎯 Experiment Objective
 
