@@ -7,22 +7,23 @@ The primary objective of this experiment was to gain an understanding of Registe
 ---
 
 ## Contents
+## 📑 Contents
 
-- [Digital Design Verification](#digital-design-verification)
-- [Simulation Workflow with Icarus Verilog](#2️⃣-simulation-workflow-with-icarus-verilog)
-- [Practical Exercise – Simulating a 2:1 Multiplexer](#3️⃣-practical-exercise--simulating-a-21-multiplexer)
-- [Multiplexer Design Explanation](#4️⃣-multiplexer-design-explanation)
-- [Introduction to Yosys](#5️⃣-introduction-to-yosys)
+- [What is a Simulator, Design and Testbench?](#1️⃣-what-is-a-simulator-design-and-testbench)
+- [How Does a Simulator Work?](#2️⃣-how-does-a-simulator-work)
+- [Icarus Verilog-Based Simulation Flow](#3️⃣-iverilog-based-simulation-flow)
+- [2:1 Multiplexer Implementation](#4️⃣-21-multiplexer-implementation)
+- [GTKWave Waveform Analysis](#5️⃣-gtkwave-waveform-analysis)
 - [RTL Design and Synthesis](#6️⃣-rtl-design-and-synthesis)
-- [Understanding the `.lib` File and Cell Flavors](#7️⃣-understanding-the-lib-file-and-cell-flavors)
-- [Launching Yosys and Synthesizing the Good Mux](#8️⃣-launching-yosys-and-synthesizing-the-good-mux)
-- [Synthesis Results and Gate-Level Representation](#9️⃣-synthesis-results-and-gate-level-representation)
-- [Generated Gate-Level Netlist](#🔟-generated-gate-level-netlist)
-- [Conclusion](#1️⃣1️⃣-conclusion)
+- [Introduction to Yosys](#7️⃣-introduction-to-yosys)
+- [Understanding `.lib` Files](#8️⃣-understanding-lib-files)
+- [Faster and Slower Cell Flavors](#9️⃣-faster-and-slower-cell-flavors)
+- [Cell Selection Based on Design Requirements](#🔟-cell-selection-based-on-design-requirements)
+- [Synthesis Lab Using Yosys](#1️⃣1️⃣-synthesis-lab-using-yosys)
 
 ---
 
-# 1️⃣ Digital Design Verification
+# What is a Simulator,Design and Testbench?
 
 ### Simulator
 
@@ -39,8 +40,8 @@ The design refers to the Verilog RTL module that describes the intended digital 
 ### Testbench
 A testbench is a separate Verilog module created specifically for testing a design. It provides different input combinations to the design under test and observes the corresponding outputs. A testbench is essential for checking whether the RTL implementation behaves according to the required functionality.
 
+<img width="2460" height="1080" alt="simulator" src="https://github.com/user-attachments/assets/bbd5d9fd-301c-4055-bb35-2ca4a911a7f5" />
 
-<img width="606" height="285" alt="testbench" src="https://github.com/user-attachments/assets/8f3425fa-8804-4b28-b919-38ae2d3fdfc4" />
 
 ---
 
