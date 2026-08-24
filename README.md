@@ -58,13 +58,13 @@ The complete Module 2 experiment, including commands, explanations, screenshots,
  [Module 2 – Timing Libraries, Synthesis & Flip-Flop RTL](./Module2/README.md)
  
 ---
-## Module 3 – RTL & Logic Optimization
+# Module 3 – RTL & Logic Optimization
 
 Module 3 focused on how synthesis tools can simplify RTL and logic while maintaining the required functionality.
 
 The experiments explored constant propagation, redundant logic removal, D flip-flop optimization, and counter optimization.
 
-Topics Covered
+### Topics Covered
 
 - RTL optimization
 - Logic optimization
@@ -81,7 +81,7 @@ Topics Covered
 - Optimization observations
 
 Optimization Flow
-
+      
 RTL Description
       ↓
 Logic Analysis
@@ -97,17 +97,17 @@ Optimized Hardware
 ---
 ## Module 3 Documentation
 
-"Module 3 – RTL & Logic Optimization" (Module3/README.md)
+"Module 3 – RTL & Logic Optimization"
 
 ---
 
-Module 4 – RTL to Gate-Level Simulation
+# Module 4 – RTL to Gate-Level Simulation
 
 Module 4 explored the transition from RTL simulation to synthesized gate-level verification.
 
 The experiments also demonstrated how Verilog coding practices can affect simulation results and potentially create differences between RTL simulation and synthesized hardware.
 
-Topics Covered
+### Topics Covered
 
 - RTL-to-Gate-Level Simulation flow
 - Ternary-operator based MUX
@@ -144,19 +144,19 @@ Waveform Comparison
 
 ---
 
-Module 4 Documentation
+## Module 4 Documentation
 
-"Module 4 – RTL to Gate-Level Simulation" (Module4/README.md)
+"Module 4 – RTL to Gate-Level Simulation" (./Module4/README.md)
 
 ---
 
-Module 5 – RTL Coding Styles & Looping Constructs
+# Module 5 – RTL Coding Styles & Looping Constructs
 
 Module 5 concentrated on conditional RTL coding, latch inference, synthesis optimization, and looping constructs.
 
 The practical work included incomplete and complete "if-else" and "case" implementations, wildcard "casez" behavior, MUX and DEMUX designs, and a Ripple Carry Adder using a generate loop.
 
-Topics Covered
+### Topics Covered
 
 - RTL coding styles
 - "if-else" statements
@@ -196,9 +196,9 @@ Netlist Generation
 Waveform & Hardware Analysis
 
 ---
-Module 5 Documentation
+## Module 5 Documentation
 
-"Module 5 – RTL Coding Styles & Looping Constructs" (Module5/README.md)
+"Module 5 – RTL Coding Styles & Looping Constructs" (./Module5/README.md)
 
 ---
 ##  Tools Used
