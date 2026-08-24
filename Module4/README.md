@@ -55,7 +55,7 @@ The experiments provide practical experience with MUX design, RTL simulation, Yo
 
 # 1. RTL-to-Gate-Level Design Flow
 
-The experiments in Day 4 follow the typical progression from an RTL description to a technology-mapped implementation and its post-synthesis verification.
+The experiments in Module 4 follow the typical progression from an RTL description to a technology-mapped implementation and its post-synthesis verification.
 
 ```text
 RTL Verilog Code
