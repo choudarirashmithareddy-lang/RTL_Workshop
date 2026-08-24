@@ -167,9 +167,7 @@ The individual blocks remain identifiable in the synthesized representation.
 * Some redundant logic may remain across module boundaries.
 * Additional effort may be required for complete design-level analysis.
 
-<div align="center">
-  <img src="https://private-user-images.githubusercontent.com/196539371/449109760-91f0244a-2c41-42ea-be6f-468880c3af33.png" alt="Hierarchical Synthesis" width="70%">
-</div>
+<img width="1920" height="940" alt="multiplemodules" src="https://github.com/user-attachments/assets/4b3e8aa0-98c7-409e-8284-e8ea90166af3" />
 
 ---
 
@@ -211,9 +209,9 @@ In Yosys, the `flatten` command can be used to collapse the hierarchy.
 * Large designs may require additional memory.
 * The resulting netlist can become difficult to inspect.
 
-<div align="center">
-  <img src="https://private-user-images.githubusercontent.com/196539371/449109852-e1d94a5d-d3f7-41ee-8e69-ca0c05be81a3.png" alt="Flattened Synthesis" width="70%">
-</div>
+<img width="1920" height="940" alt="mm2" src="https://github.com/user-attachments/assets/7bacf637-6efe-405a-be71-d3df057e25ab" />
+
+
 
 ---
 
@@ -363,13 +361,15 @@ gtkwave tb_dff_asyncres.vcd
 
 GTKWave can be used to observe how the clock, reset, data, and output signals behave over simulation time.
 
-<div align="center">
-  <img src="https://private-user-images.githubusercontent.com/196539371/449110055-1176581e-fd6c-4b71-8af5-5d7d5f6dbcda.png" alt="D Flip-Flop Simulation Waveform" width="70%">
-</div>
+
 
 ---
 
 # 5. Synthesizing Flip-Flops with Yosys
+<img width="1920" height="940" alt="asynchronus" src="https://github.com/user-attachments/assets/7b56b5ab-8037-4fc7-a534-741a4a0b3140" />
+
+
+
 
 The synthesized flip-flop can be mapped to an appropriate standard cell from the SKY130 library.
 
@@ -427,9 +427,8 @@ To inspect the resulting synthesized circuit:
 show
 ```
 
-<div align="center">
-  <img src="https://private-user-images.githubusercontent.com/196539371/449110138-fa8337df-e0ec-4b01-9b18-5910768e4421.png" alt="Yosys Flip-Flop Synthesis" width="70%">
-</div>
+<img width="1920" height="940" alt="asynchres" src="https://github.com/user-attachments/assets/98c793b8-1b1c-442b-ba0c-9e3bcf9dd2bd" />
+
 
 ---
 
