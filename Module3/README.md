@@ -1,6 +1,6 @@
-# Day 3: Combinational & Sequential Circuit Optimization
+# Module 3: Combinational & Sequential Circuit Optimization
 
-Welcome to **Day 3** of the workshop! This session focuses on optimizing combinational and sequential digital circuits. The objective is to understand practical techniques that can reduce hardware complexity, improve timing, and make designs more efficient.
+Welcome to **Module 3** of the workshop! This session focuses on optimizing combinational and sequential digital circuits. The objective is to understand practical techniques that can reduce hardware complexity, improve timing, and make designs more efficient.
 
 ---
 
@@ -265,7 +265,7 @@ Therefore, regardless of whether the event is caused by reset or the clock, the 
 
 ## Summary
 
-Day 3 focused on techniques used to optimize both combinational and sequential digital circuits.
+Module 3 focused on techniques used to optimize both combinational and sequential digital circuits.
 
 ### Key Concepts
 
