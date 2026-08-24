@@ -60,7 +60,7 @@ A typical workflow is:
 <img width="1600" height="893" alt="simulationflow" src="https://github.com/user-attachments/assets/9549e4f5-f156-4dfb-bcb3-ca613b619385" />
 
 
-### 🔄 Basic Simulation Sequence
+###  Basic Simulation Sequence
 
 1. Create the RTL design.
 2. Write a testbench for the design.
@@ -173,7 +173,7 @@ end
 endmodule
 ```
 
-### 🔍 Signal Description
+###  Signal Description
 
 | Signal | Direction | Purpose              |
 | ------ | --------- | -------------------- |
@@ -182,7 +182,7 @@ endmodule
 | `sel`  | Input     | Select control       |
 | `y`    | Output    | Selected data output |
 
-### ⚙️ MUX Operation
+###  MUX Operation
 
 The select signal determines which input reaches the output:
 
@@ -202,7 +202,7 @@ The `always @(*)` block ensures that the output logic responds whenever one of t
 
 ## 5. Yosys and Standard Cell Libraries
 
-### 🔹 What is Yosys?
+###  What is Yosys?
 
 **Yosys** is an open-source framework used for **RTL synthesis**.
 
@@ -222,7 +222,7 @@ Technology Mapping
 Gate-Level Netlist
 ```
 
-### 🔹 Main Capabilities of Yosys
+###  Main Capabilities of Yosys
 
 Yosys can perform several important tasks:
 
@@ -235,7 +235,7 @@ Yosys can perform several important tasks:
 * Provide circuit visualization
 * Support automated hardware design flows
 
-### 📦 Understanding `.lib` Files
+### Understanding `.lib` Files
 
 A **Liberty (`.lib`) file** contains information about standard cells used during technology mapping.
 
@@ -251,7 +251,7 @@ It can contain information such as:
 
 For example, a technology library may contain multiple implementations of the same logical function.
 
-### ⚡ Why Multiple Cell Variants Exist
+###  Why Multiple Cell Variants Exist
 
 Different versions of a cell are provided because digital designs have different requirements.
 
