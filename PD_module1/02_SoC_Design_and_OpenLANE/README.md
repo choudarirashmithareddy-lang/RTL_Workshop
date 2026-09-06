@@ -101,6 +101,7 @@ It can contain information such as:
 * Simulation models
 
 The SKY130 ecosystem is an important open technology platform used in educational and open-source silicon projects.
+<img width="1600" height="702" alt="pd2 1" src="https://github.com/user-attachments/assets/0d4ce8eb-f8ba-433d-9941-b2997918081f" />
 
 ---
 
@@ -173,6 +174,8 @@ GDSII
 ```
 
 ---
+<img width="1600" height="702" alt="pd2 4" src="https://github.com/user-attachments/assets/e3eafbc5-12f8-46ac-ad28-500ee721120c" />
+
 
 # 7. RTL Simulation
 
