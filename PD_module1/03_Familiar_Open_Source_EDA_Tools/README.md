@@ -698,6 +698,36 @@ Only include result files and measurements that were actually generated during t
                      ↓
                    GDSII
 ```
+# 26. Terminal Execution and Command Evidence
+
+The following terminal screenshots provide evidence of the commands executed during the physical design setup and OpenLane flow.
+
+## 26.1 PDK Directory and Library Setup
+
+<img width="902" height="910" alt="pdk directory" src="https://github.com/user-attachments/assets/3b9efad2-76a0-42e4-9531-0af925738516" />
+
+
+## 26.2 Sky130 Standard Cell Library Verification
+
+<img width="937" height="986" alt="pdk lib" src="https://github.com/user-attachments/assets/1d3a90ed-5cbf-4461-94fd-fe7618a07a72" />
+
+## 26.3 OpenLane Environment Setup
+<img width="618" height="851" alt="openlane" src="https://github.com/user-attachments/assets/2528a4d7-ed6c-4411-a7bc-945001c5e411" />
+
+## 26.4 LEF and Library File Verification
+
+<img width="682" height="753" alt="lef" src="https://github.com/user-attachments/assets/c0b67226-3d20-4e74-901b-49a4a7022146" />
+
+
+## 26.5 OpenLane Flow Execution
+<img width="805" height="570" alt="openlane execution" src="https://github.com/user-attachments/assets/afaaa208-6e26-4b1f-a160-f17ee68c641a" />
+
+## 26.6 OpenLane Configuration
+<img width="817" height="758" alt="openlane configuration" src="https://github.com/user-attachments/assets/174203f5-1408-486e-8ded-3dd338ffa0e2" />
+
+
+## 26.7 Floorplan Configuration 
+<img width="692" height="728" alt="floor configuration" src="https://github.com/user-attachments/assets/6783893e-cfc3-4d65-a86f-75b5cd7e54de" />
 
 ---
 
