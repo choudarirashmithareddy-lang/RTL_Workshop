@@ -387,6 +387,7 @@ Verification
 GDSII
 ```
 
+<img width="1600" height="702" alt="pd2 6" src="https://github.com/user-attachments/assets/0efbef99-1ca7-4760-9afc-c0517d111342" />
 ---
 
 # 16. Why OpenLANE is Useful
@@ -418,6 +419,8 @@ The broader objective is to encourage:
 * SoC research
 * ASIC education
 * Community-based silicon design
+  <img width="1600" height="702" alt="pd2 5" src="https://github.com/user-attachments/assets/be5bc2c4-ddcf-4624-b497-56cd2e5fe1b9" />
+
 
 ---
 
