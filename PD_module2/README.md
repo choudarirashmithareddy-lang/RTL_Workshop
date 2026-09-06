@@ -248,7 +248,8 @@ These are commonly referred to as **pre-placed or fixed cells/blocks**.
 
 Their locations are decided during floorplanning because their positions strongly influence routing and the placement of surrounding logic.
 
-<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 10 50 39 PM" src="https://github.com/user-attachments/assets/675eed3e-44e6-47c4-b829-c9cce5f3163c" />
+
+<img width="876" height="367" alt="Screenshot 2026-09-06 230312" src="https://github.com/user-attachments/assets/d47046fc-5a46-43d1-a548-7612eb8173a1" />
 
 
 
@@ -278,7 +279,7 @@ A good placement can reduce:
 * Timing delays
 * Unnecessary routing detours
 
-
+<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 10 50 39 PM" src="https://github.com/user-attachments/assets/675eed3e-44e6-47c4-b829-c9cce5f3163c" />
 ---
 
 # 8. IP Blocks and Floorplanning
@@ -323,7 +324,7 @@ A typical floorplan may contain:
 
 Decoupling capacitors store electrical charge locally and can provide that charge during short-duration current-demand events.
 
-<img width="976" height="707" alt="Decoupling capacitors around blocks" src="https://github.com/user-attachments/assets/649a14fb-7099-47ea-a629-a24f177578f1" />
+<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 10 50 46 PM" src="https://github.com/user-attachments/assets/b2d85ea1-a8f4-4fcf-a413-2f5561824965" />
 
 ---
 
@@ -363,7 +364,8 @@ where:
 
 Therefore, a large and rapid current transition can produce significant supply-voltage disturbance.
 
-<img width="1309" height="700" alt="Switching current and voltage drop" src="https://github.com/user-attachments/assets/4c5a373c-bb90-42e4-bc8f-f3ad0b2d2792" />
+<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 11 11 21 PM" src="https://github.com/user-attachments/assets/4f52241b-2c47-46d2-b086-1e7c4ce4a679" />
+
 
 ---
 
@@ -389,7 +391,8 @@ A noise disturbance that remains within the available noise margin generally doe
 
 If the disturbance becomes larger than the available margin, the receiving circuit may interpret the signal incorrectly.
 
-<img width="1084" height="584" alt="Noise margin diagram" src="https://github.com/user-attachments/assets/eb0fa1ce-b52d-4bd0-b78b-58f30ebdd24e" />
+<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 10 50 40 PM" src="https://github.com/user-attachments/assets/68db71a2-fc52-49cf-b3e2-f2f6d6b6c72c" />
+
 
 ---
 
@@ -415,7 +418,8 @@ Power network restores capacitor charge
 
 Because the capacitor is located close to the switching circuitry, it can reduce the impact of transient current demand on the local supply voltage.
 
-<img width="1291" height="698" alt="Decoupling capacitor operation" src="https://github.com/user-attachments/assets/45ff5865-832c-46ff-bea8-be3e88695fa6" />
+<img width="1600" height="702" alt="11" src="https://github.com/user-attachments/assets/c0126a17-1fd0-45c6-9d26-205288fa8593" />
+
 
 ---
 
@@ -445,7 +449,8 @@ The primary objective is to minimize the electrical distance between the decoupl
 
 A shorter path can reduce the effect of parasitic resistance and inductance.
 
-<img width="1342" height="583" alt="Decap placement around blocks" src="https://github.com/user-attachments/assets/37256ea8-fe0c-4be8-b6c9-793212230bb4" />
+<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 10 50 40 PM" src="https://github.com/user-attachments/assets/bb8ea56a-8909-4ade-9ce2-c196efa9d237" />
+
 
 ---
 
@@ -468,7 +473,7 @@ The exact arrangement depends on the current-demand characteristics, available a
 
 Placing DECAP cells close to high-switching regions helps provide a local source of charge and can improve supply stability.
 
-<img width="973" height="573" alt="Floorplan with decoupling regions" src="https://github.com/user-attachments/assets/b7a7290e-28e2-416d-be5e-697e99b83ac1" />
+<img width="821" height="521" alt="Screenshot 2026-09-06 231716" src="https://github.com/user-attachments/assets/5e10a92c-985b-47ee-af92-445f2b062aa5" />
 
 ---
 
@@ -490,7 +495,8 @@ This makes power-network design particularly important for circuits containing w
 
 Appropriate power planning and decoupling help maintain a stable supply voltage.
 
-<img width="1144" height="600" alt="Power network and 16-bit bus" src="https://github.com/user-attachments/assets/20c93dc0-0302-476e-855b-faa3aee40e1c" />
+<img width="847" height="492" alt="Screenshot 2026-09-06 231745" src="https://github.com/user-attachments/assets/241e25fd-f8be-4d38-aaf5-cfce240aaac6" />
+
 
 ---
 
@@ -536,7 +542,8 @@ If utilization is too low, the design may occupy unnecessarily large silicon are
 
 Therefore, a suitable value must be selected based on the characteristics of the design.
 
-<img width="1229" height="583" alt="OpenLane floorplanning configuration" src="https://github.com/user-attachments/assets/50da70e4-0414-4910-86fd-9266ffe07301" />
+<img width="675" height="446" alt="Screenshot 2026-09-06 231808" src="https://github.com/user-attachments/assets/1028f31d-28ee-4668-8349-54a8b057e917" />
+
 
 ---
 
@@ -597,7 +604,8 @@ An effective PDN helps with:
 * Reliable standard-cell operation
 * Improved current distribution
 
-<img width="1035" height="582" alt="Power Distribution Network" src="https://github.com/user-attachments/assets/d20df03f-6735-4feb-9788-f91c82fa8c63" />
+<img width="871" height="560" alt="Screenshot 2026-09-06 231910" src="https://github.com/user-attachments/assets/af57c318-f7f1-40ef-b18c-d0911166b321" />
+
 
 ---
 
@@ -639,8 +647,8 @@ The `config.tcl` file serves as an important configuration point. It specifies d
 * Clock information
 * Floorplan settings
 * Placement targets
+<img width="1067" height="522" alt="Screenshot 2026-09-06 232251" src="https://github.com/user-attachments/assets/dceca058-922b-4e62-a060-697c7381904a" />
 
-<img width="958" height="934" alt="OpenLane configuration" src="https://github.com/user-attachments/assets/6290e875-280f-4602-b43a-8b427850888c" />
 
 ---
 
@@ -684,7 +692,7 @@ control the amount of available core area and the desired placement density.
 
 The goal is to obtain a compact implementation while leaving sufficient resources for routing.
 
-<img width="958" height="934" alt="SKY130 high-density configuration" src="https://github.com/user-attachments/assets/9421bc1b-2684-44ce-87c5-92d51a2d3396" />
+<img width="892" height="290" alt="Screenshot 2026-09-06 232309" src="https://github.com/user-attachments/assets/3ef30648-1daa-4c89-8b56-c13841f579fa" />
 
 ---
 
@@ -735,7 +743,8 @@ unithddbl
 
 These correspond to different cell heights and placement requirements.
 
-<img width="958" height="934" alt="SKY130 LEF configuration" src="https://github.com/user-attachments/assets/7a9cdff1-bfda-46ea-b364-87ba12d0fb88" />
+<img width="752" height="872" alt="Screenshot 2026-09-06 232638" src="https://github.com/user-attachments/assets/2564232c-151a-4ecc-9128-43cbae748ca9" />
+
 
 ---
 
@@ -840,7 +849,8 @@ FP_IO_HTHICKNESS_MULT
 
 These parameters control well-tap insertion, endcap cells, I/O geometry, and related physical structures.
 
-<img width="958" height="934" alt="OpenLane floorplan configuration" src="https://github.com/user-attachments/assets/92a81c0e-8990-4607-b382-06a17cfa4e68" />
+<img width="847" height="871" alt="Screenshot 2026-09-06 232708" src="https://github.com/user-attachments/assets/1281ebe1-ffe8-4bb3-828f-9e3bda8ba008" />
+
 
 ---
 
@@ -866,16 +876,17 @@ A good placement solution attempts to achieve:
 * Better timing
 * Efficient routing
 * Reduced power consumption
+<img width="916" height="446" alt="Screenshot 2026-09-06 232745" src="https://github.com/user-attachments/assets/018431f2-637f-436d-aacf-afb7e57e2722" />
 
-<img width="1920" height="944" alt="Standard-cell placement" src="https://github.com/user-attachments/assets/c04a62c5-3d6e-4d22-bc0e-28c3c796d419" />
 
 Example command/output:
 
-<img width="958" height="934" alt="Placement command" src="https://github.com/user-attachments/assets/4944eeaf-9a68-40ab-aae3-a18f0be41b88" />
+<img width="813" height="786" alt="Screenshot 2026-09-06 232807" src="https://github.com/user-attachments/assets/5b7ce9f3-c953-4040-89b2-79107b24a55a" />
+
 
 Additional placement result:
 
-<img width="1920" height="944" alt="Placed standard cells" src="https://github.com/user-attachments/assets/1ba203df-ed8d-4240-ba79-c06969145f08" />
+<img width="857" height="435" alt="Screenshot 2026-09-06 232823" src="https://github.com/user-attachments/assets/febcb4f7-c326-4650-824f-af4c94685188" />
 
 ---
 
@@ -1077,9 +1088,10 @@ library.
 
 This process establishes the relationship between the logical representation and its physical implementation.
 
-<img width="445" height="540" alt="Logical to physical cell mapping" src="https://github.com/user-attachments/assets/085d9aa5-fe10-43d4-9968-ef8adb81f6f7" />
+<img width="408" height="656" alt="Screenshot 2026-09-06 233111" src="https://github.com/user-attachments/assets/34aa6d18-8a3d-431b-a625-cf6d2b219dc5" />
 
-<img width="1080" height="552" alt="Physical library cells" src="https://github.com/user-attachments/assets/4f5f18e5-28a7-40dc-9bb7-41f2a7d38ae7" />
+
+<img width="867" height="420" alt="Screenshot 2026-09-06 233126" src="https://github.com/user-attachments/assets/9a2aab05-b09a-4651-b744-d337c6a25d9a" />
 
 ---
 
@@ -1112,8 +1124,8 @@ Physical Layout
 ```
 
 The examples show how the same logic can be represented at different stages, progressing from the original netlist to the final physical arrangement.
+<img width="765" height="467" alt="Screenshot 2026-09-06 233147" src="https://github.com/user-attachments/assets/c2fa7c27-208f-4e8c-9279-f9084d11a407" />
 
-<img width="1080" height="595" alt="Logical to physical placement" src="https://github.com/user-attachments/assets/3dcc51e5-06cc-414d-bce4-2ac7aba59c08" />
 
 The floorplan example contains:
 
@@ -1124,7 +1136,8 @@ The floorplan example contains:
 * Special structures such as `DECAP1` and `DECAP3`
 * Placement and routing regions
 
-<img width="1080" height="586" alt="Final floorplan placement" src="https://github.com/user-attachments/assets/3b1d8217-ee9f-481e-97dd-946f6c1e1fb6" />
+![Uploading Screenshot 2026-09-06 233215.png…]()
+
 
 ---
 
