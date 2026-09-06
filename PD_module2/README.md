@@ -126,7 +126,7 @@ For the example considered in this module, the design contains:
 
 Although the netlist describes the design logically, each component eventually needs a physical representation with a defined width, height, and location.
 
-<img width="1920" height="1080" alt="Core and die dimensions" src="https://github.com/user-attachments/assets/99014082-f6ff-4e35-88ee-ec74ea45e9ad" />
+<img width="876" height="698" alt="Screenshot 2026-09-06 223752" src="https://github.com/user-attachments/assets/e0399213-d8db-48ea-8c26-815935350d10" />
 
 ---
 
@@ -144,8 +144,8 @@ The example contains components such as:
 Every physical cell occupies a finite amount of silicon area. Therefore, the dimensions of the cells must be considered before deciding the size of the core.
 
 The total cell area provides the basis for determining how much space should be reserved for standard-cell placement.
+<img width="855" height="690" alt="Screenshot 2026-09-06 223834" src="https://github.com/user-attachments/assets/a100b8e2-bc8f-4f83-b3c0-cb9e25199f8b" />
 
-<img width="1920" height="1080" alt="Physical dimensions of cells" src="https://github.com/user-attachments/assets/7f6fdf41-93b2-4a8a-a023-0f82d896f96b" />
 
 ---
 
@@ -168,7 +168,8 @@ The complete cell area is obtained by summing the area of all cells present in t
 
 This calculated value is useful when determining the minimum core area required by the design.
 
-<img width="1920" height="1080" alt="Netlist cell area calculation" src="https://github.com/user-attachments/assets/d657d5b0-e0b9-4d39-a04f-93521dcb6056" />
+<img width="1322" height="817" alt="Screenshot 2026-09-06 223905" src="https://github.com/user-attachments/assets/b7106b57-4245-4c35-8596-1dbac00f7ee9" />
+
 
 ---
 
@@ -189,7 +190,8 @@ Total Core Area
 
 A high utilization value means that cells are packed more densely. A lower value leaves additional whitespace that can be used for routing and other physical-design requirements.
 
-<img width="1920" height="1080" alt="Utilization factor" src="https://github.com/user-attachments/assets/211c4821-e0ff-4a35-88b0-c22edb6ab923" />
+<img width="1423" height="858" alt="Screenshot 2026-09-06 223940" src="https://github.com/user-attachments/assets/ab4b5f6f-69fb-44cb-9f71-0777b3661589" />
+
 
 ### Aspect Ratio
 
@@ -222,7 +224,8 @@ A lower utilization value generally creates more whitespace. This can provide ad
 
 However, excessively low utilization increases the overall chip area.
 
-<img width="1920" height="1080" alt="Core and die sizing example" src="https://github.com/user-attachments/assets/f4c04f0c-9bda-410b-8c49-5ebc565f7a0e" />
+<img width="1036" height="463" alt="Screenshot 2026-09-06 224004" src="https://github.com/user-attachments/assets/11629c9c-3383-4d64-9afd-599c9d8faf4f" />
+
 
 ---
 
@@ -245,7 +248,9 @@ These are commonly referred to as **pre-placed or fixed cells/blocks**.
 
 Their locations are decided during floorplanning because their positions strongly influence routing and the placement of surrounding logic.
 
-<img width="1838" height="580" alt="Pre-placed cell locations" src="https://github.com/user-attachments/assets/7f1ef943-2c7e-4b80-936b-75a91e54e2b6" />
+<img width="1600" height="702" alt="WhatsApp Image 2026-09-06 at 10 50 39 PM" src="https://github.com/user-attachments/assets/675eed3e-44e6-47c4-b829-c9cce5f3163c" />
+
+
 
 ---
 
@@ -273,7 +278,6 @@ A good placement can reduce:
 * Timing delays
 * Unnecessary routing detours
 
-<img width="869" height="734" alt="Placement of pre-placed cells" src="https://github.com/user-attachments/assets/c3672a74-a831-4d00-9375-848b05389ac1" />
 
 ---
 
@@ -295,7 +299,8 @@ Since these blocks can occupy significant silicon area and often have fixed dime
 
 Therefore, floorplanning establishes the overall physical structure of the chip.
 
-<img width="1175" height="581" alt="IP block floorplanning" src="https://github.com/user-attachments/assets/90606d97-76e4-4046-aea0-fc6383f393e2" />
+<img width="957" height="650" alt="Screenshot 2026-09-06 224142" src="https://github.com/user-attachments/assets/fcef3785-40ee-47a0-afd7-436a45ec57dd" />
+
 
 ---
 
