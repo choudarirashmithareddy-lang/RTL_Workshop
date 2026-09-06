@@ -1136,8 +1136,7 @@ The floorplan example contains:
 * Special structures such as `DECAP1` and `DECAP3`
 * Placement and routing regions
 
-![Uploading Screenshot 2026-09-06 233215.png…]()
-
+<img width="892" height="531" alt="Screenshot 2026-09-06 233215" src="https://github.com/user-attachments/assets/9b7fc889-ee35-4fd0-9945-7b16be255051" />
 
 ---
 
