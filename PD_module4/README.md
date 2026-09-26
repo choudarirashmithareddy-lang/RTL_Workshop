@@ -120,8 +120,8 @@ If new data reaches the capture flip-flop too quickly after the clock transition
 
 
 ### Hold Time Concept
+![Uploading Screenshot 2026-09-26 225314.png…]()
 
-![Hold Time](https://github.com/Moursagna/VSDIAT-Chip-Design/raw/main/Day_9/images/Hold_time.png)
 
 ---
 
@@ -275,6 +275,8 @@ A negative setup slack means that the corresponding timing requirement is not sa
 ## STA Reports
 
 STA reports provide information about timing paths, including cell delays, net delays, clock details, data arrival time, data required time, and slack.
+<img width="1187" height="902" alt="image" src="https://github.com/user-attachments/assets/c1c58528-20f7-4433-802e-ea585dedd274" />
+<img width="1333" height="880" alt="image" src="https://github.com/user-attachments/assets/61f75500-5f9b-4b7f-b00d-d15b20118fc9" />
 
 ---
 
