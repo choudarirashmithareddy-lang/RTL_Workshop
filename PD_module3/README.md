@@ -395,8 +395,8 @@ Electrical Simulation
 Because the model comes from the layout, the simulation can include physical information that is absent from an ideal logic-level description.
 
 ### Extracted SPICE Inverter
+<img width="542" height="479" alt="image" src="https://github.com/user-attachments/assets/17366602-92c7-4030-8ff4-892eb4334d49" />
 
-<img width="852" height="586" alt="Screenshot 2026-09-26 201539" src="https://github.com/user-attachments/assets/b90a2ba7-3ee3-4159-b599-7e32fd765d45" />
 
 ---
 
@@ -423,8 +423,8 @@ Transient step   = 1 ns
 
 ### ngspice Transient Simulation
 
+<img width="891" height="491" alt="image" src="https://github.com/user-attachments/assets/f615f6fd-7939-4096-9e63-75822b28a573" />
 
-<img width="775" height="568" alt="Screenshot 2026-09-26 201604" src="https://github.com/user-attachments/assets/f9e83921-799c-496c-a291-6e5ab9150c17" />
 
 ---
 
@@ -449,7 +449,7 @@ Consequently, the waveform provides information about both:
 
 ### Transient Waveform
 
-<img width="1168" height="591" alt="Screenshot 2026-09-26 202036" src="https://github.com/user-attachments/assets/162c4c5d-63df-46c5-bfe8-65aad59c69af" />
+<img width="891" height="507" alt="image" src="https://github.com/user-attachments/assets/a6964d28-f24f-42aa-af24-74b4bdf0d922" />
 
 
 ---
