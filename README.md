@@ -19,11 +19,11 @@ The repository contains practical experiments, Verilog source files, testbenches
 | RTL             | Module 3    | RTL and Logic Optimization                        | Completed   |
 | RTL             | Module 4    | Gate-Level Simulation and RTL Coding Practices    | Completed   |
 | RTL             | Module 5    | RTL Coding Styles and Loop Constructs             | Completed   |
-| Physical Design | PD Module 1 | Open-Source EDA, OpenLane and SKY130              | In Progress |
-| Physical Design | PD Module 2 | Floorplanning and Power Distribution              | In Progress |
-| Physical Design | PD Module 3 | Standard Cell Design, Layout and Characterization | In Progress |
-| Physical Design | PD Module 4 | Timing, STA and Physical Verification             | Planned     |
-| Physical Design | PD Module 5 | RTL-to-GDSII Flow and SoC Implementation          | Planned     |
+| Physical Design | PD Module 1 | Open-Source EDA, OpenLane and SKY130              | Completed   |
+| Physical Design | PD Module 2 | Floorplanning and Power Distribution              | Completed   |
+| Physical Design | PD Module 3 | Standard Cell Design, Layout and Characterization | Completed   |
+| Physical Design | PD Module 4 | Timing, STA and Physical Verification             | Completed   |
+| Physical Design | PD Module 5 | RTL-to-GDSII Flow and SoC Implementation          | Completed   |
 
 ---
 
