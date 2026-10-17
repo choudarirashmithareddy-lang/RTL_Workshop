@@ -1,0 +1,23 @@
+# OpenLane generated intermediate data
+OpenLane/runs/*/tmp/
+OpenLane/runs/*/logs/
+OpenLane/runs/*/reports/
+OpenLane/runs/*/results/
+
+# Keep run metadata but ignore bulky generated files
+OpenLane/runs/*/*.log
+OpenLane/runs/*/cmds.log
+
+# Backup copies
+Backup/
+
+# Simulation outputs
+*.vcd
+/streetlight_sim
+/streetlight_test
+
+# Temporary editor files
+*.tmp
+*.bak
+*~
+OpenLane/runs/RUN_2026.10.12_07.16.52/

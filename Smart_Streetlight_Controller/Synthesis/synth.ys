@@ -1,0 +1,24 @@
+read_verilog RTL/streetlight_controller.v
+read_verilog RTL/pwm_generator.v
+read_verilog RTL/smart_streetlight.v
+
+hierarchy -top smart_streetlight
+
+proc
+opt
+fsm
+opt
+memory
+opt
+techmap
+opt
+
+abc -g simple
+
+clean
+
+stat
+
+write_verilog Synthesis/smart_streetlight_netlist.v
+
+

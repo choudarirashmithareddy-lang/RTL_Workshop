@@ -1,0 +1,1567 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.47+121 (git sha1 98b4affc4, g++ 13.2.0-23ubuntu4 -fPIC -O3)
+
+-- Executing script file `Synthesis/synth_sky130.ys' --
+
+1. Executing Verilog-2005 frontend: RTL/reset_sync.v
+Parsing Verilog input from `RTL/reset_sync.v' to AST representation.
+Generating RTLIL representation for module `\reset_sync'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: RTL/streetlight_controller.v
+Parsing Verilog input from `RTL/streetlight_controller.v' to AST representation.
+Generating RTLIL representation for module `\streetlight_controller'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: RTL/pwm_generator.v
+Parsing Verilog input from `RTL/pwm_generator.v' to AST representation.
+Generating RTLIL representation for module `\pwm_generator'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: RTL/smart_streetlight.v
+Parsing Verilog input from `RTL/smart_streetlight.v' to AST representation.
+Generating RTLIL representation for module `\smart_streetlight'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \smart_streetlight
+Used module:     \pwm_generator
+Used module:     \streetlight_controller
+Used module:     \reset_sync
+
+5.2. Analyzing design hierarchy..
+Top module:  \smart_streetlight
+Used module:     \pwm_generator
+Used module:     \streetlight_controller
+Used module:     \reset_sync
+Removed 0 unused modules.
+
+6. Executing SYNTH pass.
+
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1.1. Analyzing design hierarchy..
+Top module:  \smart_streetlight
+Used module:     \pwm_generator
+Used module:     \streetlight_controller
+Used module:     \reset_sync
+
+6.1.2. Analyzing design hierarchy..
+Top module:  \smart_streetlight
+Used module:     \pwm_generator
+Used module:     \streetlight_controller
+Used module:     \reset_sync
+Removed 0 unused modules.
+
+6.2. Executing PROC pass (convert processes to netlists).
+
+6.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$RTL/pwm_generator.v:23$9 in module pwm_generator.
+Marked 1 switch rules as full_case in process $proc$RTL/pwm_generator.v:11$7 in module pwm_generator.
+Marked 1 switch rules as full_case in process $proc$RTL/streetlight_controller.v:54$6 in module streetlight_controller.
+Marked 7 switch rules as full_case in process $proc$RTL/streetlight_controller.v:15$2 in module streetlight_controller.
+Marked 1 switch rules as full_case in process $proc$RTL/reset_sync.v:9$1 in module reset_sync.
+Removed a total of 0 dead cases.
+
+6.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 2 assignments to connections.
+
+6.2.4. Executing PROC_INIT pass (extract init attributes).
+
+6.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\pwm_generator.$proc$RTL/pwm_generator.v:11$7'.
+Found async reset \reset in `\streetlight_controller.$proc$RTL/streetlight_controller.v:15$2'.
+Found async reset \async_reset in `\reset_sync.$proc$RTL/reset_sync.v:9$1'.
+
+6.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~9 debug messages>
+
+6.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pwm_generator.$proc$RTL/pwm_generator.v:23$9'.
+     1/2: $2\pwm_out[0:0]
+     2/2: $1\pwm_out[0:0]
+Creating decoders for process `\pwm_generator.$proc$RTL/pwm_generator.v:11$7'.
+     1/1: $0\counter[7:0]
+Creating decoders for process `\streetlight_controller.$proc$RTL/streetlight_controller.v:54$6'.
+     1/1: $1\duty_cycle[7:0]
+Creating decoders for process `\streetlight_controller.$proc$RTL/streetlight_controller.v:15$2'.
+     1/1: $0\state[1:0]
+Creating decoders for process `\reset_sync.$proc$RTL/reset_sync.v:9$1'.
+     1/1: $0\reset_ff[1:0]
+
+6.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\pwm_generator.\pwm_out' from process `\pwm_generator.$proc$RTL/pwm_generator.v:23$9'.
+No latch inferred for signal `\streetlight_controller.\duty_cycle' from process `\streetlight_controller.$proc$RTL/streetlight_controller.v:54$6'.
+
+6.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pwm_generator.\counter' using process `\pwm_generator.$proc$RTL/pwm_generator.v:11$7'.
+  created $adff cell `$procdff$47' with positive edge clock and positive level reset.
+Creating register for signal `\streetlight_controller.\state' using process `\streetlight_controller.$proc$RTL/streetlight_controller.v:15$2'.
+  created $adff cell `$procdff$50' with positive edge clock and positive level reset.
+Creating register for signal `\reset_sync.\reset_ff' using process `\reset_sync.$proc$RTL/reset_sync.v:9$1'.
+  created $adff cell `$procdff$53' with negative edge clock and positive level reset.
+
+6.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\pwm_generator.$proc$RTL/pwm_generator.v:23$9'.
+Removing empty process `pwm_generator.$proc$RTL/pwm_generator.v:23$9'.
+Removing empty process `pwm_generator.$proc$RTL/pwm_generator.v:11$7'.
+Found and cleaned up 1 empty switch in `\streetlight_controller.$proc$RTL/streetlight_controller.v:54$6'.
+Removing empty process `streetlight_controller.$proc$RTL/streetlight_controller.v:54$6'.
+Found and cleaned up 6 empty switches in `\streetlight_controller.$proc$RTL/streetlight_controller.v:15$2'.
+Removing empty process `streetlight_controller.$proc$RTL/streetlight_controller.v:15$2'.
+Removing empty process `reset_sync.$proc$RTL/reset_sync.v:9$1'.
+Cleaned up 9 empty switches.
+
+6.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module smart_streetlight.
+Optimizing module pwm_generator.
+<suppressed ~1 debug messages>
+Optimizing module streetlight_controller.
+<suppressed ~5 debug messages>
+Optimizing module reset_sync.
+<suppressed ~1 debug messages>
+
+6.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module smart_streetlight.
+Optimizing module pwm_generator.
+Optimizing module streetlight_controller.
+Optimizing module reset_sync.
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \streetlight_controller..
+Finding unused cells or wires in module \reset_sync..
+Removed 3 unused cells and 24 unused wires.
+<suppressed ~6 debug messages>
+
+6.5. Executing CHECK pass (checking for obvious problems).
+Checking module pwm_generator...
+Checking module reset_sync...
+Checking module smart_streetlight...
+Checking module streetlight_controller...
+Found and reported 0 problems.
+
+6.6. Executing OPT pass (performing simple optimizations).
+
+6.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+6.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$16.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 1 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 0 changes.
+
+6.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+6.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~2 debug messages>
+
+6.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+    New ctrl vector for $pmux cell $procmux$32: { $procmux$44_CMP $auto$opt_reduce.cc:137:opt_pmux$55 }
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 1 changes.
+
+6.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 0 changes.
+
+6.6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.6.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.6.23. Finished OPT passes. (There is nothing left to do.)
+
+6.7. Executing FSM pass (extract and optimize FSM).
+
+6.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking streetlight_controller.state as FSM state register:
+    Circuit seems to be self-resetting.
+
+6.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6.8. Executing OPT pass (performing simple optimizations).
+
+6.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 0 changes.
+
+6.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.8.9. Finished OPT passes. (There is nothing left to do.)
+
+6.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 7 bits (of 8) from port B of cell pwm_generator.$add$RTL/pwm_generator.v:17$8 ($add).
+Removed top 1 bits (of 2) from port B of cell streetlight_controller.$procmux$24_CMP0 ($eq).
+Removed top 1 bits (of 2) from mux cell streetlight_controller.$procmux$42 ($mux).
+Removed top 1 bits (of 2) from wire streetlight_controller.$procmux$42_Y.
+
+6.10. Executing PEEPOPT pass (run peephole optimizers).
+
+6.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+6.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module pwm_generator:
+  creating $macc model for $add$RTL/pwm_generator.v:17$8 ($add).
+  creating $alu model for $macc $add$RTL/pwm_generator.v:17$8.
+  creating $alu model for $lt$RTL/pwm_generator.v:26$11 ($lt): new $alu
+  creating $alu cell for $lt$RTL/pwm_generator.v:26$11: $auto$alumacc.cc:485:replace_alu$58
+  creating $alu cell for $add$RTL/pwm_generator.v:17$8: $auto$alumacc.cc:485:replace_alu$63
+  created 2 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module reset_sync:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module smart_streetlight:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module streetlight_controller:
+  created 0 $alu and 0 $macc cells.
+
+6.13. Executing SHARE pass (SAT-based resource sharing).
+
+6.14. Executing OPT pass (performing simple optimizations).
+
+6.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+<suppressed ~1 debug messages>
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 0 changes.
+
+6.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+6.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+6.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 0 changes.
+
+6.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.14.16. Finished OPT passes. (There is nothing left to do.)
+
+6.15. Executing MEMORY pass.
+
+6.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.17. Executing OPT pass (performing simple optimizations).
+
+6.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+<suppressed ~2 debug messages>
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+<suppressed ~1 debug messages>
+
+6.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+6.17.5. Finished fast OPT passes.
+
+6.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6.19. Executing OPT pass (performing simple optimizations).
+
+6.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+6.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+    Consolidated identical input bits for $pmux cell $procmux$22:
+      Old ports: A=8'00000000, B=16'0100110111111111, Y=\duty_cycle
+      New ports: A=2'00, B=4'0111, Y=\duty_cycle [1:0]
+      New connections: \duty_cycle [7:2] = { \duty_cycle [1:0] \duty_cycle [1] \duty_cycle [1:0] \duty_cycle [0] }
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 1 changes.
+
+6.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.19.6. Executing OPT_SHARE pass.
+
+6.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pwm_generator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \reset_sync..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \smart_streetlight..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \streetlight_controller..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+6.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pwm_generator.
+  Optimizing cells in module \reset_sync.
+  Optimizing cells in module \smart_streetlight.
+  Optimizing cells in module \streetlight_controller.
+Performed a total of 0 changes.
+
+6.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+Removed a total of 0 cells.
+
+6.19.14. Executing OPT_SHARE pass.
+
+6.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+
+6.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+
+6.19.18. Finished OPT passes. (There is nothing left to do.)
+
+6.20. Executing TECHMAP pass (map to technology primitives).
+
+6.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+6.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~337 debug messages>
+
+6.21. Executing OPT pass (performing simple optimizations).
+
+6.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pwm_generator.
+<suppressed ~62 debug messages>
+Optimizing module reset_sync.
+Optimizing module smart_streetlight.
+Optimizing module streetlight_controller.
+<suppressed ~12 debug messages>
+
+6.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pwm_generator'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `\reset_sync'.
+Finding identical cells in module `\smart_streetlight'.
+Finding identical cells in module `\streetlight_controller'.
+<suppressed ~6 debug messages>
+Removed a total of 11 cells.
+
+6.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pwm_generator..
+Finding unused cells or wires in module \reset_sync..
+Finding unused cells or wires in module \smart_streetlight..
+Finding unused cells or wires in module \streetlight_controller..
+Removed 26 unused cells and 121 unused wires.
+<suppressed ~28 debug messages>
+
+6.21.5. Finished fast OPT passes.
+
+6.22. Executing HIERARCHY pass (managing design hierarchy).
+
+6.22.1. Analyzing design hierarchy..
+Top module:  \smart_streetlight
+Used module:     \streetlight_controller
+Used module:     \pwm_generator
+Used module:     \reset_sync
+
+6.22.2. Analyzing design hierarchy..
+Top module:  \smart_streetlight
+Used module:     \streetlight_controller
+Used module:     \pwm_generator
+Used module:     \reset_sync
+Removed 0 unused modules.
+
+6.23. Printing statistics.
+
+=== pwm_generator ===
+
+   Number of wires:                 34
+   Number of wire bits:            101
+   Number of public wires:           5
+   Number of public wire bits:      19
+   Number of ports:                  4
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 77
+     $_AND_                         27
+     $_DFF_PP0_                      8
+     $_NOT_                         11
+     $_OR_                          16
+     $_XOR_                         15
+
+=== reset_sync ===
+
+   Number of wires:                  4
+   Number of wire bits:              5
+   Number of public wires:           4
+   Number of public wire bits:       5
+   Number of ports:                  3
+   Number of port bits:              3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $_DFF_NP1_                      2
+
+=== smart_streetlight ===
+
+   Number of wires:                  7
+   Number of wire bits:             14
+   Number of public wires:           7
+   Number of public wire bits:      14
+   Number of ports:                  5
+   Number of port bits:              5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     pwm_generator                   1
+     reset_sync                      1
+     streetlight_controller          1
+
+=== streetlight_controller ===
+
+   Number of wires:                 20
+   Number of wire bits:             42
+   Number of public wires:           6
+   Number of public wire bits:      14
+   Number of ports:                  5
+   Number of port bits:             12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 23
+     $_AND_                          3
+     $_DFF_PP0_                      2
+     $_MUX_                          6
+     $_NOT_                          6
+     $_OR_                           6
+
+=== design hierarchy ===
+
+   smart_streetlight                 1
+     pwm_generator                   1
+     reset_sync                      1
+     streetlight_controller          1
+
+   Number of wires:                 65
+   Number of wire bits:            162
+   Number of public wires:          22
+   Number of public wire bits:      52
+   Number of ports:                 17
+   Number of port bits:             31
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                102
+     $_AND_                         30
+     $_DFF_NP1_                      2
+     $_DFF_PP0_                     10
+     $_MUX_                          6
+     $_NOT_                         17
+     $_OR_                          22
+     $_XOR_                         15
+
+6.24. Executing CHECK pass (checking for obvious problems).
+Checking module pwm_generator...
+Checking module reset_sync...
+Checking module smart_streetlight...
+Checking module streetlight_controller...
+Found and reported 0 problems.
+
+7. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfstp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfstp_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfstp_4' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' because it does not contain ff output 'IQ' - skipping.
+Warning: Inference failed on expression '(D&DE&!SCE)|(IQ&!DE&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' because it does not evaluate to an enable flop - skipping.
+Warning: Inference failed on expression '(D&DE&!SCE)|(IQ&!DE&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' because it does not evaluate to an enable flop - skipping.
+Warning: Inference failed on expression '(D&DE&!SCE)|(IQ&!DE&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' because it does not evaluate to an enable flop - skipping.
+Warning: Inference failed on expression '(D&DE&!SCE)|(IQ&!DE&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' because it does not evaluate to an enable flop - skipping.
+Warning: Inference failed on expression '(D&DE&!SCE)|(IQ&!DE&!SCE)|(SCD&SCE)' in next_state attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' because it does not evaluate to an enable flop - skipping.
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+7.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\pwm_generator':
+  mapped 8 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+Mapping DFF cells in module `\reset_sync':
+  mapped 2 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+Mapping DFF cells in module `\smart_streetlight':
+Mapping DFF cells in module `\streetlight_controller':
+  mapped 2 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+
+8. Executing ABC pass (technology mapping using ABC).
+
+8.1. Extracting gate netlist of module `\pwm_generator' to `<abc-temp-dir>/input.blif'..
+Extracted 77 gates and 94 wires to a netlist network with 17 inputs and 17 outputs.
+
+8.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.25 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 324 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.31 sec
+ABC: Memory =   19.52 MB. Time =     0.31 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       13
+ABC RESULTS:        internal signals:       60
+ABC RESULTS:           input signals:       17
+ABC RESULTS:          output signals:       17
+Removing temp directory.
+
+8.2. Extracting gate netlist of module `\reset_sync' to `<abc-temp-dir>/input.blif'..
+Extracted 4 gates and 6 wires to a netlist network with 2 inputs and 4 outputs.
+
+8.2.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.42 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 324 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.50 sec
+ABC: Memory =   19.52 MB. Time =     0.50 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.2.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        4
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        2
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+8.3. Extracting gate netlist of module `\smart_streetlight' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+8.4. Extracting gate netlist of module `\streetlight_controller' to `<abc-temp-dir>/input.blif'..
+Extracted 23 gates and 29 wires to a netlist network with 5 inputs and 6 outputs.
+
+8.4.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.09 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 324 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.13 sec
+ABC: Memory =   19.52 MB. Time =     0.13 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+8.4.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        2
+ABC RESULTS:        internal signals:       18
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        6
+Removing temp directory.
+Removed 0 unused cells and 91 unused wires.
+
+9. Printing statistics.
+
+=== pwm_generator ===
+
+   Number of wires:                 42
+   Number of wire bits:             70
+   Number of public wires:           5
+   Number of public wire bits:      19
+   Number of ports:                  4
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 52
+     sky130_fd_sc_hd__a21oi_1        4
+     sky130_fd_sc_hd__a22oi_1        1
+     sky130_fd_sc_hd__and3_1         2
+     sky130_fd_sc_hd__clkinv_1      13
+     sky130_fd_sc_hd__dfrtp_1        8
+     sky130_fd_sc_hd__maj3_1         1
+     sky130_fd_sc_hd__nand2_1        2
+     sky130_fd_sc_hd__nand2b_1       3
+     sky130_fd_sc_hd__nand3_1        2
+     sky130_fd_sc_hd__nand4_1        1
+     sky130_fd_sc_hd__nor2_1         3
+     sky130_fd_sc_hd__nor2b_1        2
+     sky130_fd_sc_hd__o21ai_0        1
+     sky130_fd_sc_hd__o221ai_1       2
+     sky130_fd_sc_hd__o2bb2ai_1      1
+     sky130_fd_sc_hd__xnor2_1        2
+     sky130_fd_sc_hd__xor2_1         4
+
+   Chip area for module '\pwm_generator': 449.180800
+     of which used for sequential elements: 200.192000 (44.57%)
+
+=== reset_sync ===
+
+   Number of wires:                  8
+   Number of wire bits:              9
+   Number of public wires:           4
+   Number of public wire bits:       5
+   Number of ports:                  3
+   Number of port bits:              3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     sky130_fd_sc_hd__clkinv_1       4
+     sky130_fd_sc_hd__dfstp_2        2
+
+   Chip area for module '\reset_sync': 67.564800
+     of which used for sequential elements: 52.550400 (77.78%)
+
+=== smart_streetlight ===
+
+   Number of wires:                  7
+   Number of wire bits:             14
+   Number of public wires:           7
+   Number of public wire bits:      14
+   Number of ports:                  5
+   Number of port bits:              5
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  3
+     pwm_generator                   1
+     reset_sync                      1
+     streetlight_controller          1
+
+   Area for cell type \reset_sync is unknown!
+   Area for cell type \streetlight_controller is unknown!
+   Area for cell type \pwm_generator is unknown!
+
+=== streetlight_controller ===
+
+   Number of wires:                 10
+   Number of wire bits:             19
+   Number of public wires:           6
+   Number of public wire bits:      14
+   Number of ports:                  5
+   Number of port bits:             12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     sky130_fd_sc_hd__and3_1         1
+     sky130_fd_sc_hd__clkinv_1       2
+     sky130_fd_sc_hd__dfrtp_1        2
+     sky130_fd_sc_hd__maj3_1         1
+     sky130_fd_sc_hd__nor2b_1        2
+     sky130_fd_sc_hd__xor2_1         1
+
+   Chip area for module '\streetlight_controller': 95.091200
+     of which used for sequential elements: 50.048000 (52.63%)
+
+=== design hierarchy ===
+
+   smart_streetlight                 1
+     pwm_generator                   1
+     reset_sync                      1
+     streetlight_controller          1
+
+   Number of wires:                 67
+   Number of wire bits:            112
+   Number of public wires:          22
+   Number of public wire bits:      52
+   Number of ports:                 17
+   Number of port bits:             31
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 67
+     sky130_fd_sc_hd__a21oi_1        4
+     sky130_fd_sc_hd__a22oi_1        1
+     sky130_fd_sc_hd__and3_1         3
+     sky130_fd_sc_hd__clkinv_1      19
+     sky130_fd_sc_hd__dfrtp_1       10
+     sky130_fd_sc_hd__dfstp_2        2
+     sky130_fd_sc_hd__maj3_1         2
+     sky130_fd_sc_hd__nand2_1        2
+     sky130_fd_sc_hd__nand2b_1       3
+     sky130_fd_sc_hd__nand3_1        2
+     sky130_fd_sc_hd__nand4_1        1
+     sky130_fd_sc_hd__nor2_1         3
+     sky130_fd_sc_hd__nor2b_1        4
+     sky130_fd_sc_hd__o21ai_0        1
+     sky130_fd_sc_hd__o221ai_1       2
+     sky130_fd_sc_hd__o2bb2ai_1      1
+     sky130_fd_sc_hd__xnor2_1        2
+     sky130_fd_sc_hd__xor2_1         5
+
+   Chip area for top module '\smart_streetlight': 611.836800
+     of which used for sequential elements: 50.048000 (8.18%)
+
+10. Executing Verilog backend.
+
+10.1. Executing BMUXMAP pass.
+
+10.2. Executing DEMUXMAP pass.
+Dumping module `\pwm_generator'.
+Dumping module `\reset_sync'.
+Dumping module `\smart_streetlight'.
+Dumping module `\streetlight_controller'.
+
+Warnings: 24 unique messages, 24 total
+End of script. Logfile hash: fc501a659a, CPU: user 0.93s system 0.67s, MEM: 44.38 MB peak
+Yosys 0.47+121 (git sha1 98b4affc4, g++ 13.2.0-23ubuntu4 -fPIC -O3)
+Time spent: 51% 1x abc (1 sec), 23% 1x dfflibmap (0 sec), ...

@@ -1,0 +1,22 @@
+SMART STREETLIGHT CONTROLLER
+THREE-CORNER STATIC TIMING ANALYSIS SUMMARY
+
+Clock period: 10 ns
+Clock uncertainty: 0.2 ns
+Input delay: 1 ns
+Output delay: 1 ns
+
+Corner    Worst Setup Slack    Worst Hold Slack    Setup TNS
+TT        +4.57 ns             +0.15 ns             0.00 ns
+FF        +4.65 ns             +0.02 ns             0.00 ns
+SS        +1.94 ns             +0.95 ns             0.00 ns
+
+PRELIMINARY CONCLUSION:
+All three reported corners have positive worst setup and hold slack.
+Reported setup total negative slack (TNS) is zero.
+
+LIMITATIONS:
+- Ideal clock assumptions are used.
+- Routed parasitics are not included.
+- FF hold slack is only +0.02 ns and requires further investigation.
+- These results do not constitute post-route timing signoff.

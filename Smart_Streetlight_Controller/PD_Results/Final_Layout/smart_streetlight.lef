@@ -1,0 +1,153 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO smart_streetlight
+  CLASS BLOCK ;
+  FOREIGN smart_streetlight ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 55.875 BY 66.595 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 13.595 10.640 15.195 54.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 24.750 10.640 26.350 54.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 35.905 10.640 37.505 54.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 47.060 10.640 48.660 54.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 18.815 50.380 20.415 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 29.690 50.380 31.290 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 40.565 50.380 42.165 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 51.440 50.380 53.040 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 10.295 10.640 11.895 54.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 21.450 10.640 23.050 54.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 32.605 10.640 34.205 54.640 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 43.760 10.640 45.360 54.640 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 15.515 50.380 17.115 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 26.390 50.380 27.990 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 37.265 50.380 38.865 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 48.140 50.380 49.740 ;
+    END
+  END VPWR
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 51.040 4.000 51.640 ;
+    END
+  END clk
+  PIN day_night
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 0.090 0.000 0.370 4.000 ;
+    END
+  END day_night
+  PIN light_pwm
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.340600 ;
+    PORT
+      LAYER met3 ;
+        RECT 51.875 40.840 55.875 41.440 ;
+    END
+  END light_pwm
+  PIN reset
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 32.290 62.595 32.570 66.595 ;
+    END
+  END reset
+  PIN vehicle_detect
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 48.390 0.000 48.670 4.000 ;
+    END
+  END vehicle_detect
+  OBS
+      LAYER nwell ;
+        RECT 5.330 10.795 50.330 54.485 ;
+      LAYER li1 ;
+        RECT 5.520 10.795 50.140 54.485 ;
+      LAYER met1 ;
+        RECT 0.070 10.640 50.140 54.640 ;
+      LAYER met2 ;
+        RECT 0.100 62.315 32.010 62.595 ;
+        RECT 32.850 62.315 49.120 62.595 ;
+        RECT 0.100 4.280 49.120 62.315 ;
+        RECT 0.650 4.000 48.110 4.280 ;
+        RECT 48.950 4.000 49.120 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 52.040 51.875 54.565 ;
+        RECT 4.400 50.640 51.875 52.040 ;
+        RECT 4.000 41.840 51.875 50.640 ;
+        RECT 4.000 40.440 51.475 41.840 ;
+        RECT 4.000 10.715 51.875 40.440 ;
+      LAYER met4 ;
+        RECT 20.535 33.495 21.050 50.825 ;
+        RECT 23.450 33.495 24.350 50.825 ;
+        RECT 26.750 33.495 30.065 50.825 ;
+  END
+END smart_streetlight
+END LIBRARY
+

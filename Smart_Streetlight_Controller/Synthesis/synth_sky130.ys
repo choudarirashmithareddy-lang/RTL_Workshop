@@ -1,0 +1,18 @@
+read_verilog RTL/reset_sync.v
+read_verilog RTL/streetlight_controller.v
+read_verilog RTL/pwm_generator.v
+read_verilog RTL/smart_streetlight.v
+
+hierarchy -check -top smart_streetlight
+
+synth -top smart_streetlight -noabc
+
+dfflibmap -liberty /home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+abc -liberty /home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+clean
+
+stat -liberty /home/vsduser/VSDSquadron_FM/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+write_verilog -noattr Synthesis/smart_streetlight_sky130.v

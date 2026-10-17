@@ -1,0 +1,140 @@
+OpenSTA 3.1.0 d1e43c6f9f Copyright (c) 2026, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+
+===== FF CORNER: SETUP TIMING =====
+Startpoint: reset_unit/_9_ (rising edge-triggered flip-flop clocked by clk')
+Endpoint: controller/_11_ (recovery check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+   0.00    5.00 ^ reset_unit/_9_/CLK (sky130_fd_sc_hd__dfstp_2)
+   0.25    5.25 v reset_unit/_9_/Q (sky130_fd_sc_hd__dfstp_2)
+   0.04    5.29 ^ controller/_04_/Y (sky130_fd_sc_hd__clkinv_1)
+   0.00    5.29 ^ controller/_11_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           5.29   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.20    9.80   clock uncertainty
+   0.00    9.80   clock reconvergence pessimism
+           9.80 ^ controller/_11_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.14    9.94   library recovery time
+           9.94   data required time
+---------------------------------------------------------
+           9.94   data required time
+          -5.29   data arrival time
+---------------------------------------------------------
+           4.65   slack (MET)
+
+
+Startpoint: controller/_11_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: light_pwm (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.00    0.00 ^ controller/_11_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.24    0.24 v controller/_11_/Q (sky130_fd_sc_hd__dfrtp_1)
+   0.35    0.58 ^ controller/_06_/X (sky130_fd_sc_hd__xor2_1)
+   0.03    0.61 v pwm/_44_/Y (sky130_fd_sc_hd__nand2b_1)
+   0.18    0.79 v pwm/_47_/X (sky130_fd_sc_hd__maj3_1)
+   0.08    0.87 ^ pwm/_52_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.05    0.92 v pwm/_55_/Y (sky130_fd_sc_hd__o221ai_1)
+   0.07    0.99 ^ pwm/_60_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.00    0.99 ^ light_pwm (out)
+           0.99   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.20    9.80   clock uncertainty
+   0.00    9.80   clock reconvergence pessimism
+  -1.00    8.80   output external delay
+           8.80   data required time
+---------------------------------------------------------
+           8.80   data required time
+          -0.99   data arrival time
+---------------------------------------------------------
+           7.81   slack (MET)
+
+
+
+===== FF CORNER: HOLD TIMING =====
+Startpoint: reset_unit/_9_ (rising edge-triggered flip-flop clocked by clk')
+Endpoint: controller/_11_ (removal check against rising-edge clock clk)
+Path Group: asynchronous
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+   0.00    5.00 ^ reset_unit/_9_/CLK (sky130_fd_sc_hd__dfstp_2)
+   0.25    5.25 v reset_unit/_9_/Q (sky130_fd_sc_hd__dfstp_2)
+   0.04    5.29 ^ controller/_04_/Y (sky130_fd_sc_hd__clkinv_1)
+   0.00    5.29 ^ controller/_11_/RESET_B (sky130_fd_sc_hd__dfrtp_1)
+           5.29   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   0.20    0.20   clock uncertainty
+   0.00    0.20   clock reconvergence pessimism
+           0.20 ^ controller/_11_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.19    0.39   library removal time
+           0.39   data required time
+---------------------------------------------------------
+           0.39   data required time
+          -5.29   data arrival time
+---------------------------------------------------------
+           4.90   slack (MET)
+
+
+Startpoint: reset_unit/_8_ (rising edge-triggered flip-flop clocked by clk')
+Endpoint: reset_unit/_9_ (rising edge-triggered flip-flop clocked by clk')
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+   0.00    5.00 ^ reset_unit/_8_/CLK (sky130_fd_sc_hd__dfstp_2)
+   0.21    5.21 v reset_unit/_8_/Q (sky130_fd_sc_hd__dfstp_2)
+   0.00    5.21 v reset_unit/_9_/D (sky130_fd_sc_hd__dfstp_2)
+           5.21   data arrival time
+
+   5.00    5.00   clock clk' (rise edge)
+   0.00    5.00   clock network delay (ideal)
+   0.20    5.20   clock uncertainty
+   0.00    5.20   clock reconvergence pessimism
+           5.20 ^ reset_unit/_9_/CLK (sky130_fd_sc_hd__dfstp_2)
+  -0.01    5.19   library hold time
+           5.19   data required time
+---------------------------------------------------------
+           5.19   data required time
+          -5.21   data arrival time
+---------------------------------------------------------
+           0.02   slack (MET)
+
+
+
+===== FF CORNER: WORST SETUP SLACK =====
+worst slack max 4.65
+
+===== FF CORNER: WORST HOLD SLACK =====
+worst slack min 0.02
+
+===== FF CORNER: TNS =====
+tns max 0.00
+% invalid command name "~/OpenSTA/build/sta"
+% 

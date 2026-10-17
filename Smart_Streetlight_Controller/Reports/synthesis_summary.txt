@@ -1,0 +1,28 @@
+SMART STREETLIGHT CONTROLLER
+SYNTHESIS SUMMARY
+
+Synthesis tool: Yosys 0.47+
+Target library: SKY130 HD standard cells
+Top module: smart_streetlight
+
+Synthesis status:
+- Synthesis script completed successfully.
+- SKY130 mapped netlist generated.
+- Sequential flip-flop cells are present.
+- Four Verilog modules are present in the mapped netlist.
+
+Top-module statistics:
+- Mapped cell count: 67
+- Estimated cell area: 611.8368 library area units
+- Area attributed to sequential elements: 50.0480 library area units
+- Sequential area percentage: 8.18%
+
+Warnings:
+- 24 unique warning messages were reported.
+- Library-cell inference and ABC messages require interpretation.
+- Warning-free synthesis has not been established.
+
+Limitations:
+- Area is a synthesis estimate, not final physical area.
+- Placement and routing have not been completed.
+- Post-route timing signoff has not been performed.
