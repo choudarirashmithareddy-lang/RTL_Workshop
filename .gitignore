@@ -1,0 +1,13 @@
+# Simulation executables
+Smart_Streetlight_Controller/post_synth_sim
+Smart_Streetlight_Controller/reset_debug_sim
+Smart_Streetlight_Controller/sky130_flop_test_sim
+Smart_Streetlight_Controller/streetlight_sim
+Smart_Streetlight_Controller/streetlight_test
+
+# Generated waveform files
+Smart_Streetlight_Controller/*.vcd
+
+# Temporary files
+*.log
+*.tmp
