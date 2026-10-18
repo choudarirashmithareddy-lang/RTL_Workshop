@@ -104,6 +104,8 @@ gtkwave streetlight.vcd
 ```
 
 If your testbench uses a different VCD filename or module interface, adjust the commands to match the actual source files.
+<img width="1920" height="940" alt="gtkwave" src="https://github.com/user-attachments/assets/d6c5edfe-6967-466a-9823-372abc12ca8c" />
+
 
 ## 7. Logic Synthesis
 
@@ -121,6 +123,13 @@ The synthesis flow maps the design to standard cells supported by the selected t
 - Review the synthesis log and cell statistics.
 
 The generated netlist serves as an input to the physical-design flow.
+<img width="958" height="930" alt="streetcontroller" src="https://github.com/user-attachments/assets/2f4279cb-919f-4512-8f28-f33e682a0b44" />
+<img width="958" height="930" alt="smartstreetlight" src="https://github.com/user-attachments/assets/40424f35-c1e7-4d87-98ef-b3fc0caaffc5" />
+<img width="958" height="930" alt="pwmgenerator" src="https://github.com/user-attachments/assets/36a10d6b-d568-48ad-9faa-3c3e3b859f19" />
+
+
+
+
 
 ## 8. Physical Design Flow
 
