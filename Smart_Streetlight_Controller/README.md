@@ -75,49 +75,7 @@ Streetlight Output
 - Static Timing Analysis (STA)
 - Linux and Docker
 
-## 6. Project Directory Structure
-
-```text
-Smart_Streetlight_Controller/
-├── RTL/
-│   ├── smart_streetlight.v
-│   ├── streetlight_controller.v
-│   ├── pwm_generator.v
-│   └── reset_sync.v
-├── Testbench/
-│   └── streetlight_tb.v
-├── Constraints/
-│   └── smart_streetlight.sdc
-├── Synthesis/
-│   ├── smart_streetlight_netlist.v
-│   ├── smart_streetlight_sky130.v
-│   ├── synth.ys
-│   └── synth_sky130.log
-├── OpenLane/
-│   └── config.tcl
-├── PD_Results/
-│   ├── Final_Layout/
-│   └── Signoff/
-├── Reports/
-│   ├── run_sta.tcl
-│   ├── run_sta_ff.tcl
-│   ├── run_sta_ss.tcl
-│   ├── sta_tt.log
-│   ├── sta_ff.log
-│   ├── sta_ss.log
-│   └── three_corner_sta_summary.txt
-├── images/
-│   ├── smart_streetlight_floorplan.png
-│   ├── smart_streetlight_placement.png
-│   ├── smart_streetlight_cts.png
-│   ├── smart_streetlight_routing.png
-│   └── smart_streetlight_gds.png
-└── README.md
-```
-
-*The directory listing summarizes the main project files. Exact contents may vary with the saved implementation results.*
-
-## 7. RTL Simulation
+## 6. RTL Simulation
 
 RTL simulation is used to verify the controller's logical behavior before synthesis.
 
@@ -147,7 +105,7 @@ gtkwave streetlight.vcd
 
 If your testbench uses a different VCD filename or module interface, adjust the commands to match the actual source files.
 
-## 8. Logic Synthesis
+## 7. Logic Synthesis
 
 Logic synthesis converts the RTL design into a gate-level netlist using Yosys.
 
@@ -164,7 +122,7 @@ The synthesis flow maps the design to standard cells supported by the selected t
 
 The generated netlist serves as an input to the physical-design flow.
 
-## 9. Physical Design Flow
+## 8. Physical Design Flow
 
 The project explores physical implementation using OpenLane and OpenROAD with the SkyWater SKY130 platform.
 
@@ -178,31 +136,31 @@ The main stages are:
 6. Design-rule and layout checks
 7. Final GDSII generation
 
-### 9.1 Floorplanning
+### 8.1 Floorplanning
 
 Floorplanning defines the die and core regions and establishes the initial physical organization of the design. It provides the foundation for power planning, placement, and routing.
 
 ![Smart Streetlight Controller floorplan](images/smart_streetlight_floorplan.png)
 
-### 9.2 Standard-Cell Placement
+### 8.2 Standard-Cell Placement
 
 Placement assigns physical locations to standard cells inside the core. The placement stage aims to support timing requirements, connectivity, and efficient area utilization.
 
 ![Smart Streetlight Controller standard-cell placement](images/smart_streetlight_placement.png)
 
-### 9.3 Clock Tree Synthesis (CTS)
+### 8.3 Clock Tree Synthesis (CTS)
 
 Clock Tree Synthesis builds the clock distribution network for sequential elements. The clock network is designed to distribute the clock signal while managing clock latency and skew.
 
 ![Smart Streetlight Controller clock tree synthesis](images/smart_streetlight_cts.png)
 
-### 9.4 Routing
+### 8.4 Routing
 
 Routing connects cells and pins using the available metal layers and vias. It implements the electrical connections needed for the design to operate after physical implementation.
 
 ![Smart Streetlight Controller routing](images/smart_streetlight_routing.png)
 
-### 9.5 Final GDSII Layout
+### 8.5 Final GDSII Layout
 
 GDSII is a layout data format used to represent physical geometry on semiconductor process layers. The final layout file can be opened in a layout viewer for inspection.
 
@@ -210,7 +168,7 @@ GDSII is a layout data format used to represent physical geometry on semiconduct
 
 *The screenshots document the saved implementation stages. Their visual appearance depends on the selected database, displayed layers, and viewer settings.*
 
-## 10. Static Timing Analysis (STA)
+## 9. Static Timing Analysis (STA)
 
 Static Timing Analysis evaluates whether the design satisfies timing constraints without requiring input-vector simulation.
 
@@ -232,7 +190,7 @@ The analysis examines setup and hold timing, slack, and timing-path behavior und
 
 The saved reports show zero WNS and TNS for the reported timing analysis. These values should be interpreted in the context of the specific constraints, libraries, and timing configuration used in the run.
 
-## 11. Physical Verification
+## 10. Physical Verification
 
 The project includes saved design-rule and layout-versus-schematic reports.
 
@@ -241,7 +199,7 @@ The project includes saved design-rule and layout-versus-schematic reports.
 
 The implementation was run with a PDK-version mismatch override. Therefore, these results are intended for academic learning and demonstration, not as a claim of foundry-qualified manufacturing signoff.
 
-## 12. Results and Learning Outcomes
+## 11. Results and Learning Outcomes
 
 The project demonstrates the main stages of a digital-design implementation workflow:
 
@@ -256,7 +214,7 @@ The project demonstrates the main stages of a digital-design implementation work
 
 The project provides practical experience connecting RTL design decisions with their synthesized and physically implemented representations.
 
-## 13. Future Enhancements
+## 12. Future Enhancements
 
 Possible improvements include:
 
@@ -267,7 +225,7 @@ Possible improvements include:
 - Improving power estimation and timing optimization.
 - Repeating physical verification with a fully matched PDK and tool configuration.
 
-## 14. Conclusion
+## 13. Conclusion
 
 The Smart Streetlight Controller demonstrates how a sequential digital control system can be developed using Verilog HDL and explored through an open-source EDA flow. Simulation, synthesis, physical implementation, and static timing analysis help connect the functional design with its hardware realization.
 
